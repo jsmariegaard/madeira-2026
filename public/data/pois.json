@@ -1,0 +1,102 @@
+[
+  {
+    "id": "porto-moniz",
+    "name": "Porto Moniz Naturpools",
+    "category": "sevaerdighed",
+    "lat": 32.8261,
+    "lon": -17.1689,
+    "baseId": "calheta",
+    "description": "Naturlige swimmingpools dannet i lavaklipperne. Populær attraktion på nordkysten.",
+    "icon": "pool"
+  },
+  {
+    "id": "seixal-beach",
+    "name": "Seixal Strand",
+    "category": "strand",
+    "lat": 32.8127,
+    "lon": -17.1082,
+    "baseId": "calheta",
+    "description": "Smuk sort sandstrand på nordkysten, omgivet af dramatiske klipper.",
+    "icon": "beach"
+  },
+  {
+    "id": "pico-arieiro",
+    "name": "Pico do Arieiro",
+    "category": "udsigt",
+    "lat": 32.7356,
+    "lon": -16.9281,
+    "baseId": "funchal",
+    "description": "Madeiras tredjehøjeste tinde (1818m). Fantastisk solopgang over skyerne.",
+    "icon": "mountain"
+  },
+  {
+    "id": "cabo-girao",
+    "name": "Cabo Girão Skywalk",
+    "category": "udsigt",
+    "lat": 32.6567,
+    "lon": -17.0089,
+    "baseId": "funchal",
+    "description": "Europas højeste klippeskywalk (580m). Glasbund med udsigt ned til havet.",
+    "icon": "mountain"
+  },
+  {
+    "id": "mercado-lavradores",
+    "name": "Mercado dos Lavradores",
+    "category": "marked",
+    "lat": 32.6487,
+    "lon": -16.9062,
+    "baseId": "funchal",
+    "description": "Funchals farverige bondemarkeded. Eksotisk frugt, blomster og frisk fisk.",
+    "icon": "market"
+  },
+  {
+    "id": "monte-cable-car",
+    "name": "Kabelbane til Monte",
+    "category": "sevaerdighed",
+    "lat": 32.6667,
+    "lon": -16.8994,
+    "baseId": "funchal",
+    "description": "Kabelbane fra Funchal centrum til Monte. Fantastisk udsigt over byen.",
+    "icon": "cable-car"
+  },
+  {
+    "id": "calheta-beach",
+    "name": "Calheta Sandstrand",
+    "category": "strand",
+    "lat": 32.7184,
+    "lon": -17.1738,
+    "baseId": "calheta",
+    "description": "En af de få sandstrande på Madeira. Importeret lyst sand, roligt vand.",
+    "icon": "beach"
+  },
+  {
+    "id": "whale-museum",
+    "name": "Hvalmuseet",
+    "category": "sevaerdighed",
+    "lat": 32.7410,
+    "lon": -16.7352,
+    "baseId": "canical",
+    "description": "Museum om Madeiras hvalfangst-historie i den gamle fiskerby Caniçal.",
+    "icon": "museum"
+  },
+  {
+    "id": "paul-da-serra",
+    "name": "Paul da Serra",
+    "category": "udsigt",
+    "lat": 32.7630,
+    "lon": -17.0450,
+    "baseId": "calheta",
+    "description": "Madeiras eneste højslette (~1400m). Udgangspunkt for levada-vandringer.",
+    "icon": "mountain"
+  },
+  {
+    "id": "sugar-cane-factory",
+    "name": "Sukkerrørsfabrikken",
+    "category": "sevaerdighed",
+    "lat": 32.7178,
+    "lon": -17.1689,
+    "baseId": "calheta",
+    "description": "Eneste aktive sukkerrørsfabrik i Europa. Smag Madeira-rom og honningkage.",
+    "icon": "factory"
+  }
+]

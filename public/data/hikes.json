@@ -1,0 +1,44 @@
+[
+  {
+    "id": "pr8",
+    "name": "PR8 Vereda da Ponta de São Lourenço",
+    "difficulty": "moderat",
+    "duration": "2-3 timer",
+    "distance": "7.4 km",
+    "baseId": "canical",
+    "lat": 32.7488,
+    "lon": -16.7058,
+    "description": "Den barske østspids af Madeira. Dramatiske klipper og havudsigt. Man behøver ikke gå hele turen — de første 45 min giver fuld valuta.",
+    "fee": true,
+    "feeUrl": "https://simplifica.madeira.gov.pt",
+    "trailhead": { "lat": 32.7441, "lon": -16.7032 }
+  },
+  {
+    "id": "pr11",
+    "name": "PR11 Vereda dos Balcões",
+    "difficulty": "let",
+    "duration": "45-60 min",
+    "distance": "3 km",
+    "baseId": "funchal",
+    "lat": 32.7456,
+    "lon": -16.8853,
+    "description": "Super let vandretur med fantastisk udsigt over de højeste tinder. Perfekt for hele familien.",
+    "fee": false,
+    "feeUrl": null,
+    "trailhead": { "lat": 32.7456, "lon": -16.8853 }
+  },
+  {
+    "id": "25-fontes",
+    "name": "Levada das 25 Fontes / Alecrim",
+    "difficulty": "moderat",
+    "duration": "3-4 timer",
+    "distance": "11 km",
+    "baseId": "calheta",
+    "lat": 32.7630,
+    "lon": -17.0850,
+    "description": "Populær levada-vandretur fra Rabaçal. 25 vandfald i en grøn dal. Kan kombineres med Levada do Alecrim.",
+    "fee": true,
+    "feeUrl": "https://simplifica.madeira.gov.pt",
+    "trailhead": { "lat": 32.7610, "lon": -17.0695 }
+  }
+]

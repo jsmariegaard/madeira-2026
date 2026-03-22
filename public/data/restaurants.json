@@ -1,0 +1,98 @@
+[
+  {
+    "id": "forte",
+    "name": "Restaurante do Forte",
+    "category": "restaurant",
+    "lat": 32.6448,
+    "lon": -16.9117,
+    "baseId": "funchal",
+    "priceRange": 2,
+    "cuisine": "Portugisisk / Seafood",
+    "notes": "Beliggende i et gammelt fort ved havnen. Fantastisk udsigt og frisk fisk.",
+    "googleMapsUrl": "https://maps.google.com/?q=Restaurante+do+Forte+Funchal"
+  },
+  {
+    "id": "santa-maria-1",
+    "name": "Venda Velha",
+    "category": "restaurant",
+    "lat": 32.6478,
+    "lon": -16.9050,
+    "baseId": "funchal",
+    "priceRange": 2,
+    "cuisine": "Madeiresisk / Tapas",
+    "notes": "Hyggelig restaurant på Rua de Santa Maria. Prøv Espetada (oksekød på laurbærspid).",
+    "googleMapsUrl": "https://maps.google.com/?q=Venda+Velha+Funchal"
+  },
+  {
+    "id": "poncha-bar",
+    "name": "Taberna da Poncha",
+    "category": "bar",
+    "lat": 32.6730,
+    "lon": -16.9790,
+    "baseId": "funchal",
+    "priceRange": 1,
+    "cuisine": "Poncha / Drinks",
+    "notes": "Den mest berømte poncha-bar i Serra de Água. Et must for den ægte oplevelse!",
+    "googleMapsUrl": "https://maps.google.com/?q=Taberna+da+Poncha+Serra+de+Agua"
+  },
+  {
+    "id": "mercado-cafe",
+    "name": "O Moinho (Mercado dos Lavradores)",
+    "category": "cafe",
+    "lat": 32.6487,
+    "lon": -16.9062,
+    "baseId": "funchal",
+    "priceRange": 1,
+    "cuisine": "Café / Let frokost",
+    "notes": "Cafe inde i markedshallen. Perfekt til en hurtig Bica (espresso) og Pastel de Nata.",
+    "googleMapsUrl": "https://maps.google.com/?q=Mercado+dos+Lavradores+Funchal"
+  },
+  {
+    "id": "calheta-marina-1",
+    "name": "Marina Terrace Restaurant",
+    "category": "restaurant",
+    "lat": 32.7177,
+    "lon": -17.1750,
+    "baseId": "calheta",
+    "priceRange": 2,
+    "cuisine": "Seafood / International",
+    "notes": "Direkte ved Calheta Marina med udsigt over havet. God grillet fisk.",
+    "googleMapsUrl": "https://maps.google.com/?q=Marina+Terrace+Calheta+Madeira"
+  },
+  {
+    "id": "calheta-engenho",
+    "name": "Restaurante Engenho Velho",
+    "category": "restaurant",
+    "lat": 32.7178,
+    "lon": -17.1689,
+    "baseId": "calheta",
+    "priceRange": 2,
+    "cuisine": "Traditionel madeiresisk",
+    "notes": "Ved sukkerrørsfabrikken. Serverer traditionelle retter som Bolo do Caco og Espada com Banana.",
+    "googleMapsUrl": "https://maps.google.com/?q=Engenho+Velho+Calheta"
+  },
+  {
+    "id": "canical-lapas",
+    "name": "Muralha Bar & Restaurante",
+    "category": "restaurant",
+    "lat": 32.7414,
+    "lon": -16.7363,
+    "baseId": "canical",
+    "priceRange": 2,
+    "cuisine": "Seafood / Lapas",
+    "notes": "Autentisk fiskerby-restaurant. Prøv Lapas (limpetter) grillet med hvidløgssmør!",
+    "googleMapsUrl": "https://maps.google.com/?q=Muralha+Bar+Canical"
+  },
+  {
+    "id": "canical-porto",
+    "name": "Restaurante Porto de Abrigo",
+    "category": "restaurant",
+    "lat": 32.7420,
+    "lon": -16.7340,
+    "baseId": "canical",
+    "priceRange": 2,
+    "cuisine": "Fisk / Seafood",
+    "notes": "Frisk fisk direkte fra havnen. Simpelt, ægte og godt. Locals' favorit.",
+    "googleMapsUrl": "https://maps.google.com/?q=Porto+de+Abrigo+Canical"
+  }
+]
