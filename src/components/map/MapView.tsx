@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap, LayersControl } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useBase } from '../../context/BaseContext';
 import { bases } from '../../data/bases';
+import { FavoriteButton } from '../shared/FavoriteButton';
+import { cacheTiles, countTiles } from '../../utils/tileCacher';
 
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -71,20 +73,20 @@ const accomIcon = makeIcon('hue-rotate-[200deg] saturate-200 brightness-110');
 const hikeIcon = makeIcon('hue-rotate-[90deg] saturate-200');
 const foodIcon = makeIcon('hue-rotate-[320deg] saturate-200 brightness-125');
 
-function directionsUrl(lat: number, lon: number) {
-  return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}&travelmode=driving`;
+function mapsUrl(lat: number, lon: number) {
+  return `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
 }
 
 function PopupLinks({ lat, lon, url, label }: { lat: number; lon: number; url?: string | null; label?: string }) {
   return (
     <div className="flex gap-3 mt-2 pt-1.5 border-t border-slate-200">
       <a
-        href={directionsUrl(lat, lon)}
+        href={mapsUrl(lat, lon)}
         target="_blank"
         rel="noopener"
         className="text-xs font-medium text-blue-600 no-underline hover:underline"
       >
-        Rutevejledning →
+        Google Maps →
       </a>
       {url && (
         <a
@@ -119,6 +121,8 @@ export function MapView() {
   const [hikes, setHikes] = useState<Hike[]>([]);
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [userPos, setUserPos] = useState<[number, number] | null>(null);
+  const [cacheProgress, setCacheProgress] = useState<{ done: number; total: number } | null>(null);
+  const abortRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
     fetch(import.meta.env.BASE_URL + 'data/pois.json')
@@ -140,6 +144,22 @@ export function MapView() {
       (pos) => setUserPos([pos.coords.latitude, pos.coords.longitude]),
       () => {}
     );
+  };
+
+  const handleCacheTiles = async () => {
+    if (cacheProgress) {
+      abortRef.current?.abort();
+      setCacheProgress(null);
+      return;
+    }
+    const total = countTiles(10, 14);
+    const ok = confirm(`Download ${total} kortfliser til offline brug?\nDette tager et par minutter.`);
+    if (!ok) return;
+    const ac = new AbortController();
+    abortRef.current = ac;
+    setCacheProgress({ done: 0, total });
+    await cacheTiles(10, 14, (done, t) => setCacheProgress({ done, total: t }), ac.signal);
+    setCacheProgress(null);
   };
 
   return (
@@ -195,8 +215,10 @@ export function MapView() {
           <Marker key={poi.id} position={[poi.lat, poi.lon]}>
             <Popup>
               <div className="text-sm min-w-[180px]">
-                <strong>{poi.name}</strong>
-                <br />
+                <div className="flex items-start justify-between gap-1">
+                  <strong>{poi.name}</strong>
+                  <FavoriteButton id={`poi-${poi.id}`} />
+                </div>
                 <span className="text-slate-600">{poi.description}</span>
                 <PopupLinks lat={poi.lat} lon={poi.lon} url={poi.url} label="Læs mere →" />
               </div>
@@ -209,7 +231,10 @@ export function MapView() {
           <Marker key={hike.id} position={[hike.lat, hike.lon]} icon={hikeIcon}>
             <Popup>
               <div className="text-sm min-w-[180px]">
-                <strong className="text-green-800">{hike.name}</strong>
+                <div className="flex items-start justify-between gap-1">
+                  <strong className="text-green-800">{hike.name}</strong>
+                  <FavoriteButton id={`hike-${hike.id}`} />
+                </div>
                 <br />
                 <span className="text-slate-600">{hike.description}</span>
                 <br />
@@ -235,7 +260,10 @@ export function MapView() {
           <Marker key={r.id} position={[r.lat, r.lon]} icon={foodIcon}>
             <Popup>
               <div className="text-sm min-w-[180px]">
-                <strong className="text-pink-800">{r.name}</strong>
+                <div className="flex items-start justify-between gap-1">
+                  <strong className="text-pink-800">{r.name}</strong>
+                  <FavoriteButton id={`rest-${r.id}`} />
+                </div>
                 <br />
                 <span className="text-slate-600">{r.cuisine} · {'€'.repeat(r.priceRange)}</span>
                 <br />
@@ -267,6 +295,28 @@ export function MapView() {
         <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-pink-500"></span> Vandring</div>
         <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-teal-400"></span> Mad & Drikke</div>
       </div>
+
+      {/* Tile cache button */}
+      <button
+        onClick={handleCacheTiles}
+        className="absolute bottom-20 right-4 z-[1000] bg-white dark:bg-slate-800 text-ocean dark:text-sky-400 shadow-lg rounded-full w-12 h-12 flex items-center justify-center text-xl border border-slate-200 dark:border-slate-600"
+        aria-label="Gem kort offline"
+        title="Gem kort offline"
+      >
+        {cacheProgress ? '⏹' : '💾'}
+      </button>
+      {cacheProgress && (
+        <div className="absolute bottom-20 right-18 z-[1000] bg-white dark:bg-slate-800 shadow-lg rounded-lg px-3 py-2 text-xs border border-slate-200 dark:border-slate-600">
+          <div className="font-medium mb-1">Gemmer kort...</div>
+          <div className="w-32 bg-slate-200 dark:bg-slate-600 rounded-full h-1.5">
+            <div
+              className="bg-ocean h-1.5 rounded-full transition-all"
+              style={{ width: `${Math.round((cacheProgress.done / cacheProgress.total) * 100)}%` }}
+            />
+          </div>
+          <div className="text-slate-500 mt-0.5">{cacheProgress.done} / {cacheProgress.total}</div>
+        </div>
+      )}
 
       {/* Locate button */}
       <button

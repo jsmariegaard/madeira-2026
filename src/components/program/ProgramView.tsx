@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { FavoriteButton } from '../shared/FavoriteButton';
 
 interface EventLink {
   label: string;
@@ -46,6 +47,12 @@ function hasExpandableContent(event: ProgramEvent): boolean {
   return !!(event.details || (event.links && event.links.length > 0));
 }
 
+const FAVORITABLE_TYPES = new Set(['activity', 'food', 'hike']);
+
+function eventId(event: ProgramEvent): string {
+  return `prog-${event.title.toLowerCase().replace(/[^a-zæøå0-9]+/g, '-').replace(/-+$/, '')}`;
+}
+
 function EventRow({ event }: { event: ProgramEvent }) {
   const [open, setOpen] = useState(false);
   const style = typeStyles[event.type] || typeStyles.activity;
@@ -64,7 +71,12 @@ function EventRow({ event }: { event: ProgramEvent }) {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-1.5">
             <span className="text-sm">{style.icon}</span>
-            <span className="text-sm font-medium">{event.title}</span>
+            <span className="text-sm font-medium flex-1">{event.title}</span>
+            {FAVORITABLE_TYPES.has(event.type) && (
+              <span onClick={(e) => e.stopPropagation()}>
+                <FavoriteButton id={eventId(event)} />
+              </span>
+            )}
             {expandable && (
               <span className={`text-xs text-slate-400 transition-transform ${open ? 'rotate-90' : ''}`}>▶</span>
             )}

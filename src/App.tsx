@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { BaseProvider } from './context/BaseContext';
 import { ThemeProvider } from './context/ThemeContext';
+import { FavoritesProvider } from './context/FavoritesContext';
 import { AppShell } from './components/layout/AppShell';
 import { MapView } from './components/map/MapView';
 import { WeatherView } from './components/weather/WeatherView';
@@ -11,6 +12,7 @@ import { ProgramView } from './components/program/ProgramView';
 export default function App() {
   return (
     <ThemeProvider>
+      <FavoritesProvider>
       <BaseProvider>
         <HashRouter>
           <AppShell>
@@ -25,6 +27,7 @@ export default function App() {
           </AppShell>
         </HashRouter>
       </BaseProvider>
+      </FavoritesProvider>
     </ThemeProvider>
   );
 }

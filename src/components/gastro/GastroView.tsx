@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useBase } from '../../context/BaseContext';
+import { FavoriteButton } from '../shared/FavoriteButton';
 
 interface Restaurant {
   id: string;
@@ -102,7 +103,10 @@ export function GastroView() {
             key={r.id}
             className="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm"
           >
-            <h3 className="font-semibold text-sm">{r.name}</h3>
+            <div className="flex items-center justify-between gap-2">
+              <h3 className="font-semibold text-sm">{r.name}</h3>
+              <FavoriteButton id={`rest-${r.id}`} />
+            </div>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
               {r.cuisine} · {priceLabel(r.priceRange)}
             </p>
@@ -131,15 +135,7 @@ export function GastroView() {
             {/* Action links */}
             <div className="flex gap-3 mt-2 pt-2 border-t border-slate-100 dark:border-slate-700">
               <a
-                href={`https://www.google.com/maps/dir/?api=1&destination=${r.lat},${r.lon}&travelmode=driving`}
-                target="_blank"
-                rel="noopener"
-                className="text-xs font-medium text-ocean dark:text-sky-400"
-              >
-                Rutevejledning →
-              </a>
-              <a
-                href={r.googleMapsUrl}
+                href={`https://www.google.com/maps/search/?api=1&query=${r.lat},${r.lon}`}
                 target="_blank"
                 rel="noopener"
                 className="text-xs font-medium text-ocean dark:text-sky-400"

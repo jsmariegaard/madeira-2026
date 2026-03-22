@@ -33,7 +33,23 @@ export default defineConfig({
             handler: 'CacheFirst',
             options: {
               cacheName: 'osm-tiles',
-              expiration: { maxEntries: 2000, maxAgeSeconds: 60 * 60 * 24 * 30 },
+              expiration: { maxEntries: 5000, maxAgeSeconds: 60 * 60 * 24 * 30 },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/[abc]\.tile\.opentopomap\.org\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'topo-tiles',
+              expiration: { maxEntries: 5000, maxAgeSeconds: 60 * 60 * 24 * 30 },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/server\.arcgisonline\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'satellite-tiles',
+              expiration: { maxEntries: 5000, maxAgeSeconds: 60 * 60 * 24 * 30 },
             },
           },
           {
