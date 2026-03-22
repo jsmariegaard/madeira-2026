@@ -295,5 +295,181 @@
     "description": "Lille, naturlig sort sandstrand i en beskyttet bugt. Her går de lokale hen. Ret beskyttet for bølger.",
     "icon": "beach",
     "url": "https://www.visitmadeira.com/en/what-to-do/sea/beaches/prainha"
+  },
+  {
+    "id": "veu-da-noiva",
+    "name": "Véu da Noiva (Brudeslør-vandfaldet)",
+    "category": "sevaerdighed",
+    "lat": 32.8265,
+    "lon": -17.0894,
+    "baseId": "calheta",
+    "description": "Dramatisk vandfald der styrter ned over klippen direkte i havet. Bedst set fra udsigtspunktet på ER101.",
+    "icon": "waterfall",
+    "url": "https://www.visitmadeira.com/en/what-to-do/nature-and-adventure/waterfalls/veu-da-noiva"
+  },
+  {
+    "id": "pocas-das-lesmas",
+    "name": "Poças das Lesmas",
+    "category": "strand",
+    "lat": 32.8250,
+    "lon": -17.1002,
+    "baseId": "calheta",
+    "description": "Hemmelige naturlige pools ved Seixal – mindre kendte end Porto Moniz, men mindst lige så smukke og mere fredelige.",
+    "icon": "pool",
+    "url": null
+  },
+  {
+    "id": "ribeira-da-janela",
+    "name": "Ribeira da Janela (Havklipper)",
+    "category": "sevaerdighed",
+    "lat": 32.8380,
+    "lon": -17.1420,
+    "baseId": "calheta",
+    "description": "Ikoniske klipper der stikker op af havet. Kort stop med dramatisk landskab – perfekt fotostop på nordkysten.",
+    "icon": "rock",
+    "url": "https://www.visitmadeira.com/en/what-to-do/nature-and-adventure/lookout-points/ilheus-da-ribeira-da-janela"
+  },
+  {
+    "id": "fanal-forest",
+    "name": "Fanal (Laurbærskoven)",
+    "category": "sevaerdighed",
+    "lat": 32.7930,
+    "lon": -17.1465,
+    "baseId": "calheta",
+    "description": "Ældgammel UNESCO-laurbærskov med mystiske, mosbegroede træer. Ofte indhyllet i tåge – magisk stemning. Let vandretur.",
+    "icon": "forest",
+    "url": "https://www.visitmadeira.com/en/what-to-do/nature-and-adventure/forests/fanal"
+  },
+  {
+    "id": "lombo-do-mouro",
+    "name": "Miradouro do Lombo do Mouro",
+    "category": "udsigt",
+    "lat": 32.7930,
+    "lon": -17.0706,
+    "baseId": "calheta",
+    "description": "Fantastisk udsigtspunkt over Paul da Serra-højsletten. Perfekt stop på vej til/fra nordkysten.",
+    "icon": "viewpoint",
+    "url": null
+  },
+  {
+    "id": "bica-da-cana",
+    "name": "Bica da Cana",
+    "category": "udsigt",
+    "lat": 32.7620,
+    "lon": -17.0807,
+    "baseId": "calheta",
+    "description": "Højt udsigtspunkt (1620m) med 360° panorama over hele øen. Udgangspunkt for Levada do Alecrim.",
+    "icon": "viewpoint",
+    "url": null
+  },
+  {
+    "id": "encumeada-pass",
+    "name": "Encumeada-passet",
+    "category": "udsigt",
+    "lat": 32.7590,
+    "lon": -17.0178,
+    "baseId": "calheta",
+    "description": "Bjergpas der forbinder nord og syd. På en klar dag kan man se begge kyster. Udgangspunkt for flere levada-ture.",
+    "icon": "mountain",
+    "url": "https://www.visitmadeira.com/en/what-to-do/nature-and-adventure/lookout-points/boca-da-encumeada"
+  },
+  {
+    "id": "sao-vicente",
+    "name": "São Vicente & Grutas",
+    "category": "sevaerdighed",
+    "lat": 32.7960,
+    "lon": -17.0420,
+    "baseId": "calheta",
+    "description": "Charmerende nordkyst-landsby med lavagrotter og vulkancenter. Grotterne er et hit for teenagere. 30 min rundvisning.",
+    "icon": "cave",
+    "url": "https://www.visitmadeira.com/en/what-to-do/culture-and-traditions/heritage-sites/grutas-e-centro-do-vulcanismo"
+  },
+  {
+    "id": "santana",
+    "name": "Santana (Traditionelle Huse)",
+    "category": "sevaerdighed",
+    "lat": 32.8000,
+    "lon": -16.8799,
+    "baseId": "canical",
+    "description": "Berømt for de trekantede stråtækte Casas Típicas. Malerisk bjerglandsby med temapark og botanisk have.",
+    "icon": "village",
+    "url": "https://www.visitmadeira.com/en/explore/funchal-and-beyond/santana"
+  },
+  {
+    "id": "arco-sao-jorge",
+    "name": "Quinta do Arco (Rosenhaven)",
+    "category": "have",
+    "lat": 32.8060,
+    "lon": -16.9120,
+    "baseId": "canical",
+    "description": "Europas største rosenhave med over 1700 arter. Idyllisk sted i Arco de São Jorge, tæt på Santana.",
+    "icon": "garden",
+    "url": "https://www.visitmadeira.com/en/what-to-do/nature-and-adventure/gardens/quinta-do-arco"
+  },
+  {
+    "id": "rocha-do-navio",
+    "name": "Teleférico da Rocha do Navio",
+    "category": "sevaerdighed",
+    "lat": 32.8060,
+    "lon": -16.8750,
+    "baseId": "canical",
+    "description": "Lille svævebane i Santana der fører ned til en afsondret kystplatform med bananplantager. Unik og næsten ukendt oplevelse.",
+    "icon": "cable-car",
+    "url": "https://www.visitmadeira.com/en/what-to-do/nature-and-adventure/nature-reserves/rocha-do-navio"
+  },
+  {
+    "id": "ponta-do-sol",
+    "name": "Ponta do Sol",
+    "category": "sevaerdighed",
+    "lat": 32.6820,
+    "lon": -17.0660,
+    "baseId": "calheta",
+    "description": "Madeiras mest solrige by. Smuk strandpromenade, digital nomad-hub med gode cafeer. Perfekt frokostpause.",
+    "icon": "village",
+    "url": "https://www.visitmadeira.com/en/explore/funchal-and-beyond/ponta-do-sol"
+  },
+  {
+    "id": "ribeira-brava",
+    "name": "Ribeira Brava",
+    "category": "sevaerdighed",
+    "lat": 32.6760,
+    "lon": -17.0640,
+    "baseId": "calheta",
+    "description": "Hyggelig kystby med en fin strandpromenade og den smukke São Bento-kirke. God pause på kystvejen mod Calheta.",
+    "icon": "village",
+    "url": "https://www.visitmadeira.com/en/explore/funchal-and-beyond/ribeira-brava"
+  },
+  {
+    "id": "jardim-do-mar",
+    "name": "Jardim do Mar",
+    "category": "sevaerdighed",
+    "lat": 32.7170,
+    "lon": -17.2020,
+    "baseId": "calheta",
+    "description": "Lille, malerisk surferlandsby vest for Calheta. Smalle stræder, bananplantager og legendariske bølger.",
+    "icon": "village",
+    "url": "https://www.visitmadeira.com/en/explore/funchal-and-beyond/jardim-do-mar"
+  },
+  {
+    "id": "achadas-da-cruz",
+    "name": "Teleférico de Achadas da Cruz",
+    "category": "sevaerdighed",
+    "lat": 32.8300,
+    "lon": -17.2060,
+    "baseId": "calheta",
+    "description": "Stejl svævebane ned til Fajã da Quebrada Nova – afsides kystplatform med små haver. Europas stejleste svævebane!",
+    "icon": "cable-car",
+    "url": "https://www.visitmadeira.com/en/what-to-do/nature-and-adventure/cable-cars/achadas-da-cruz"
+  },
+  {
+    "id": "faja-dos-padres",
+    "name": "Fajã dos Padres",
+    "category": "sevaerdighed",
+    "lat": 32.6510,
+    "lon": -17.0020,
+    "baseId": "funchal",
+    "description": "Hemmelig strand under Cabo Girão-klippen. Kun tilgængelig via privat elevator. Restaurant, vinmark og havbad i total afsondrethed.",
+    "icon": "beach",
+    "url": "https://www.fajadospadres.com/"
   }
 ]

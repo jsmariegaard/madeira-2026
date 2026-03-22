@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap, LayersControl } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useBase } from '../../context/BaseContext';
@@ -150,10 +150,28 @@ export function MapView() {
         className="h-full w-full z-0"
         zoomControl={false}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+        <LayersControl position="topleft">
+          <LayersControl.BaseLayer checked name="Standard">
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+          </LayersControl.BaseLayer>
+          <LayersControl.BaseLayer name="Topografisk">
+            <TileLayer
+              attribution='&copy; <a href="https://www.opentopomap.org">OpenTopoMap</a>'
+              url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
+              maxZoom={17}
+            />
+          </LayersControl.BaseLayer>
+          <LayersControl.BaseLayer name="Satellit">
+            <TileLayer
+              attribution='&copy; Esri'
+              url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+              maxZoom={19}
+            />
+          </LayersControl.BaseLayer>
+        </LayersControl>
         <FlyToBase lat={currentBase.lat} lon={currentBase.lon} />
 
         {/* Accommodation markers (blue) */}
@@ -244,10 +262,10 @@ export function MapView() {
 
       {/* Legend */}
       <div className="absolute top-2 right-2 z-[1000] bg-white/90 dark:bg-slate-800/90 rounded-lg px-3 py-2 text-xs shadow-md space-y-0.5">
-        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-teal-500"></span> Overnatning</div>
+        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-orange-500"></span> Overnatning</div>
         <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-blue-600"></span> Seværdighed</div>
-        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-500"></span> Vandring</div>
-        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-pink-400"></span> Mad & Drikke</div>
+        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-pink-500"></span> Vandring</div>
+        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-teal-400"></span> Mad & Drikke</div>
       </div>
 
       {/* Locate button */}
