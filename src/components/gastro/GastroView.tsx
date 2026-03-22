@@ -12,6 +12,9 @@ interface Restaurant {
   cuisine: string;
   notes: string;
   googleMapsUrl: string;
+  googleRating: number | null;
+  tripadvisorRating: number | null;
+  tripadvisorUrl: string | null;
 }
 
 const categoryLabels: Record<string, string> = {
@@ -22,6 +25,16 @@ const categoryLabels: Record<string, string> = {
 };
 
 const priceLabel = (n: number) => '€'.repeat(n);
+
+function Stars({ rating }: { rating: number }) {
+  const full = Math.floor(rating);
+  const half = rating % 1 >= 0.3;
+  return (
+    <span className="text-yellow-500 text-xs tracking-tight">
+      {'★'.repeat(full)}{half ? '½' : ''}
+    </span>
+  );
+}
 
 export function GastroView() {
   const { currentBase } = useBase();
@@ -51,7 +64,7 @@ export function GastroView() {
       </div>
 
       {/* Category filter */}
-      <div className="flex gap-2 justify-center">
+      <div className="flex gap-2 justify-center flex-wrap">
         <button
           onClick={() => setFilter(null)}
           className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
@@ -85,24 +98,66 @@ export function GastroView() {
           </p>
         )}
         {filtered.map((r) => (
-          <a
+          <div
             key={r.id}
-            href={r.googleMapsUrl}
-            target="_blank"
-            rel="noopener"
-            className="block bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow"
+            className="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm"
           >
-            <div className="flex items-start justify-between gap-2">
-              <div className="flex-1">
-                <h3 className="font-semibold text-sm">{r.name}</h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                  {r.cuisine} · {priceLabel(r.priceRange)}
-                </p>
-                <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">{r.notes}</p>
+            <h3 className="font-semibold text-sm">{r.name}</h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              {r.cuisine} · {priceLabel(r.priceRange)}
+            </p>
+            <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">{r.notes}</p>
+
+            {/* Ratings */}
+            {(r.googleRating || r.tripadvisorRating) && (
+              <div className="flex gap-4 mt-2">
+                {r.googleRating && (
+                  <a href={r.googleMapsUrl} target="_blank" rel="noopener" className="flex items-center gap-1 text-xs text-slate-600 dark:text-slate-300">
+                    <span className="font-medium">Google</span>
+                    <Stars rating={r.googleRating} />
+                    <span className="text-slate-400">{r.googleRating}</span>
+                  </a>
+                )}
+                {r.tripadvisorRating && r.tripadvisorUrl && (
+                  <a href={r.tripadvisorUrl} target="_blank" rel="noopener" className="flex items-center gap-1 text-xs text-slate-600 dark:text-slate-300">
+                    <span className="font-medium">TripAdvisor</span>
+                    <Stars rating={r.tripadvisorRating} />
+                    <span className="text-slate-400">{r.tripadvisorRating}</span>
+                  </a>
+                )}
               </div>
-              <span className="text-ocean dark:text-sky-400 text-xs shrink-0">Kort →</span>
+            )}
+
+            {/* Action links */}
+            <div className="flex gap-3 mt-2 pt-2 border-t border-slate-100 dark:border-slate-700">
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${r.lat},${r.lon}&travelmode=driving`}
+                target="_blank"
+                rel="noopener"
+                className="text-xs font-medium text-ocean dark:text-sky-400"
+              >
+                Rutevejledning →
+              </a>
+              <a
+                href={r.googleMapsUrl}
+                target="_blank"
+                rel="noopener"
+                className="text-xs font-medium text-ocean dark:text-sky-400"
+              >
+                Google Maps →
+              </a>
+              {r.tripadvisorUrl && (
+                <a
+                  href={r.tripadvisorUrl}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-xs font-medium text-ocean dark:text-sky-400"
+                >
+                  TripAdvisor →
+                </a>
+              )}
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </div>

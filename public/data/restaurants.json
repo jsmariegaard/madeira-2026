@@ -9,7 +9,10 @@
     "priceRange": 2,
     "cuisine": "Portugisisk / Seafood",
     "notes": "Beliggende i et gammelt fort ved havnen. Fantastisk udsigt og frisk fisk.",
-    "googleMapsUrl": "https://maps.google.com/?q=Restaurante+do+Forte+Funchal"
+    "googleMapsUrl": "https://maps.google.com/?q=Restaurante+do+Forte+Funchal",
+    "googleRating": 4.5,
+    "tripadvisorRating": 4.5,
+    "tripadvisorUrl": "https://www.tripadvisor.com/Restaurant_Review-g189167-d1090732-Restaurante_do_Forte-Funchal_Madeira_Madeira_Islands.html"
   },
   {
     "id": "santa-maria-1",
@@ -21,7 +24,10 @@
     "priceRange": 2,
     "cuisine": "Madeiresisk / Tapas",
     "notes": "Hyggelig restaurant på Rua de Santa Maria. Prøv Espetada (oksekød på laurbærspid).",
-    "googleMapsUrl": "https://maps.google.com/?q=Venda+Velha+Funchal"
+    "googleMapsUrl": "https://maps.google.com/?q=Venda+Velha+Funchal",
+    "googleRating": 4.4,
+    "tripadvisorRating": 4.5,
+    "tripadvisorUrl": "https://www.tripadvisor.com/Restaurant_Review-g189167-d3557795-Venda_Velha-Funchal_Madeira_Madeira_Islands.html"
   },
   {
     "id": "poncha-bar",
@@ -33,7 +39,10 @@
     "priceRange": 1,
     "cuisine": "Poncha / Drinks",
     "notes": "Den mest berømte poncha-bar i Serra de Água. Et must for den ægte oplevelse!",
-    "googleMapsUrl": "https://maps.google.com/?q=Taberna+da+Poncha+Serra+de+Agua"
+    "googleMapsUrl": "https://maps.google.com/?q=Taberna+da+Poncha+Serra+de+Agua",
+    "googleRating": 4.3,
+    "tripadvisorRating": 4.5,
+    "tripadvisorUrl": "https://www.tripadvisor.com/Restaurant_Review-g1178715-d2349498-Taberna_da_Poncha-Serra_De_Agua_Madeira_Madeira_Islands.html"
   },
   {
     "id": "mercado-cafe",
@@ -45,7 +54,10 @@
     "priceRange": 1,
     "cuisine": "Café / Let frokost",
     "notes": "Cafe inde i markedshallen. Perfekt til en hurtig Bica (espresso) og Pastel de Nata.",
-    "googleMapsUrl": "https://maps.google.com/?q=Mercado+dos+Lavradores+Funchal"
+    "googleMapsUrl": "https://maps.google.com/?q=Mercado+dos+Lavradores+Funchal",
+    "googleRating": 4.2,
+    "tripadvisorRating": null,
+    "tripadvisorUrl": null
   },
   {
     "id": "calheta-marina-1",
@@ -57,7 +69,10 @@
     "priceRange": 2,
     "cuisine": "Seafood / International",
     "notes": "Direkte ved Calheta Marina med udsigt over havet. God grillet fisk.",
-    "googleMapsUrl": "https://maps.google.com/?q=Marina+Terrace+Calheta+Madeira"
+    "googleMapsUrl": "https://maps.google.com/?q=Marina+Terrace+Calheta+Madeira",
+    "googleRating": 4.3,
+    "tripadvisorRating": 4.0,
+    "tripadvisorUrl": "https://www.tripadvisor.com/Restaurant_Review-g1599553-d12162548-Marina_Terrace-Calheta_Madeira_Madeira_Islands.html"
   },
   {
     "id": "calheta-engenho",
@@ -69,7 +84,10 @@
     "priceRange": 2,
     "cuisine": "Traditionel madeiresisk",
     "notes": "Ved sukkerrørsfabrikken. Serverer traditionelle retter som Bolo do Caco og Espada com Banana.",
-    "googleMapsUrl": "https://maps.google.com/?q=Engenho+Velho+Calheta"
+    "googleMapsUrl": "https://maps.google.com/?q=Engenho+Velho+Calheta",
+    "googleRating": 4.1,
+    "tripadvisorRating": 4.0,
+    "tripadvisorUrl": "https://www.tripadvisor.com/Restaurant_Review-g1599553-d8557287-Engenho_Velho-Calheta_Madeira_Madeira_Islands.html"
   },
   {
     "id": "canical-lapas",
@@ -81,7 +99,10 @@
     "priceRange": 2,
     "cuisine": "Seafood / Lapas",
     "notes": "Autentisk fiskerby-restaurant. Prøv Lapas (limpetter) grillet med hvidløgssmør!",
-    "googleMapsUrl": "https://maps.google.com/?q=Muralha+Bar+Canical"
+    "googleMapsUrl": "https://maps.google.com/?q=Muralha+Bar+Canical",
+    "googleRating": 4.2,
+    "tripadvisorRating": 4.0,
+    "tripadvisorUrl": "https://www.tripadvisor.com/Restaurant_Review-g1924013-d10327488-Muralha_Bar-Canical_Madeira_Madeira_Islands.html"
   },
   {
     "id": "canical-porto",
@@ -93,6 +114,9 @@
     "priceRange": 2,
     "cuisine": "Fisk / Seafood",
     "notes": "Frisk fisk direkte fra havnen. Simpelt, ægte og godt. Locals' favorit.",
-    "googleMapsUrl": "https://maps.google.com/?q=Porto+de+Abrigo+Canical"
+    "googleMapsUrl": "https://maps.google.com/?q=Porto+de+Abrigo+Canical",
+    "googleRating": 4.4,
+    "tripadvisorRating": 4.5,
+    "tripadvisorUrl": "https://www.tripadvisor.com/Restaurant_Review-g1924013-d3896498-Porto_de_Abrigo-Canical_Madeira_Madeira_Islands.html"
   }
 ]

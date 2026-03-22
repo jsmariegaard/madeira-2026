@@ -1,10 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 
+interface EventLink {
+  label: string;
+  url: string;
+}
+
 interface ProgramEvent {
   time: string;
   title: string;
   type: 'transport' | 'accommodation' | 'activity' | 'food' | 'hike';
   note: string;
+  details?: string;
+  links?: EventLink[];
 }
 
 interface ProgramDay {
@@ -35,6 +42,67 @@ function isToday(dateStr: string): boolean {
   return new Date().toISOString().split('T')[0] === dateStr;
 }
 
+function hasExpandableContent(event: ProgramEvent): boolean {
+  return !!(event.details || (event.links && event.links.length > 0));
+}
+
+function EventRow({ event }: { event: ProgramEvent }) {
+  const [open, setOpen] = useState(false);
+  const style = typeStyles[event.type] || typeStyles.activity;
+  const expandable = hasExpandableContent(event);
+
+  return (
+    <div className={`${style.bg} border-l-4`}>
+      <button
+        type="button"
+        onClick={() => expandable && setOpen(!open)}
+        className={`flex gap-3 px-4 py-3 w-full text-left ${expandable ? 'cursor-pointer active:bg-black/5 dark:active:bg-white/5' : 'cursor-default'}`}
+      >
+        <div className="shrink-0 w-12 text-right">
+          <span className="text-xs font-mono text-slate-500 dark:text-slate-400">{event.time}</span>
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-1.5">
+            <span className="text-sm">{style.icon}</span>
+            <span className="text-sm font-medium">{event.title}</span>
+            {expandable && (
+              <span className={`text-xs text-slate-400 transition-transform ${open ? 'rotate-90' : ''}`}>▶</span>
+            )}
+          </div>
+          {event.note && (
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{event.note}</p>
+          )}
+        </div>
+      </button>
+
+      {/* Expanded content */}
+      {open && (
+        <div className="px-4 pb-3 pl-[76px]">
+          {event.details && (
+            <p className="text-xs text-slate-600 dark:text-slate-300 mb-2">{event.details}</p>
+          )}
+          {event.links && event.links.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {event.links.map((link, i) => (
+                <a
+                  key={i}
+                  href={link.url}
+                  target={link.url.startsWith('#') ? '_self' : '_blank'}
+                  rel="noopener"
+                  className="inline-block text-xs font-medium bg-ocean/10 dark:bg-sky-400/20 text-ocean dark:text-sky-400 px-2.5 py-1 rounded-md"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function ProgramView() {
   const [days, setDays] = useState<ProgramDay[]>([]);
   const todayRef = useRef<HTMLDivElement>(null);
@@ -57,7 +125,7 @@ export function ProgramView() {
       <div className="text-center mb-4">
         <h2 className="text-lg font-bold">Program</h2>
         <p className="text-xs text-slate-500 dark:text-slate-400">
-          30. marts – 6. april 2026
+          30. marts – 6. april 2026 · Tryk på en aktivitet for detaljer
         </p>
       </div>
 
@@ -94,25 +162,9 @@ export function ProgramView() {
 
               {/* Events timeline */}
               <div className="bg-white dark:bg-slate-800 divide-y divide-slate-100 dark:divide-slate-700">
-                {day.events.map((event, i) => {
-                  const style = typeStyles[event.type] || typeStyles.activity;
-                  return (
-                    <div key={i} className={`flex gap-3 px-4 py-3 ${style.bg} border-l-4 ${style.bg.includes('border') ? '' : 'border-slate-200'}`}>
-                      <div className="shrink-0 w-12 text-right">
-                        <span className="text-xs font-mono text-slate-500 dark:text-slate-400">{event.time}</span>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-1.5">
-                          <span className="text-sm">{style.icon}</span>
-                          <span className="text-sm font-medium">{event.title}</span>
-                        </div>
-                        {event.note && (
-                          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{event.note}</p>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
+                {day.events.map((event, i) => (
+                  <EventRow key={i} event={event} />
+                ))}
               </div>
             </div>
           );

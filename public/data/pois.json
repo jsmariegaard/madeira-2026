@@ -7,7 +7,8 @@
     "lon": -17.1689,
     "baseId": "calheta",
     "description": "Naturlige swimmingpools dannet i lavaklipperne. Populær attraktion på nordkysten.",
-    "icon": "pool"
+    "icon": "pool",
+    "url": "https://www.visitmadeira.com/en/what-to-do/tours-and-activities/natural-swimming-pools-of-porto-moniz"
   },
   {
     "id": "seixal-beach",
@@ -17,7 +18,8 @@
     "lon": -17.1082,
     "baseId": "calheta",
     "description": "Smuk sort sandstrand på nordkysten, omgivet af dramatiske klipper.",
-    "icon": "beach"
+    "icon": "beach",
+    "url": "https://www.visitmadeira.com/en/what-to-do/sea/beaches/praia-da-laje-seixal"
   },
   {
     "id": "pico-arieiro",
@@ -27,7 +29,8 @@
     "lon": -16.9281,
     "baseId": "funchal",
     "description": "Madeiras tredjehøjeste tinde (1818m). Fantastisk solopgang over skyerne.",
-    "icon": "mountain"
+    "icon": "mountain",
+    "url": "https://www.visitmadeira.com/en/what-to-do/nature-and-adventure/mountain-peaks/pico-do-arieiro"
   },
   {
     "id": "cabo-girao",
@@ -37,7 +40,8 @@
     "lon": -17.0089,
     "baseId": "funchal",
     "description": "Europas højeste klippeskywalk (580m). Glasbund med udsigt ned til havet.",
-    "icon": "mountain"
+    "icon": "mountain",
+    "url": "https://www.visitmadeira.com/en/what-to-do/tours-and-activities/miradouro-cabo-girao"
   },
   {
     "id": "mercado-lavradores",
@@ -47,7 +51,8 @@
     "lon": -16.9062,
     "baseId": "funchal",
     "description": "Funchals farverige bondemarkeded. Eksotisk frugt, blomster og frisk fisk.",
-    "icon": "market"
+    "icon": "market",
+    "url": "https://www.visitmadeira.com/en/what-to-do/tours-and-activities/mercado-dos-lavradores"
   },
   {
     "id": "monte-cable-car",
@@ -57,7 +62,8 @@
     "lon": -16.8994,
     "baseId": "funchal",
     "description": "Kabelbane fra Funchal centrum til Monte. Fantastisk udsigt over byen.",
-    "icon": "cable-car"
+    "icon": "cable-car",
+    "url": "https://www.telefericodofunchal.com/en/"
   },
   {
     "id": "calheta-beach",
@@ -67,7 +73,8 @@
     "lon": -17.1738,
     "baseId": "calheta",
     "description": "En af de få sandstrande på Madeira. Importeret lyst sand, roligt vand.",
-    "icon": "beach"
+    "icon": "beach",
+    "url": "https://www.visitmadeira.com/en/what-to-do/sea/beaches/praia-da-calheta"
   },
   {
     "id": "whale-museum",
@@ -77,7 +84,8 @@
     "lon": -16.7352,
     "baseId": "canical",
     "description": "Museum om Madeiras hvalfangst-historie i den gamle fiskerby Caniçal.",
-    "icon": "museum"
+    "icon": "museum",
+    "url": "https://www.visitmadeira.com/en/what-to-do/culture-and-traditions/museums/museu-da-baleia"
   },
   {
     "id": "paul-da-serra",
@@ -87,7 +95,8 @@
     "lon": -17.0450,
     "baseId": "calheta",
     "description": "Madeiras eneste højslette (~1400m). Udgangspunkt for levada-vandringer.",
-    "icon": "mountain"
+    "icon": "mountain",
+    "url": "https://www.visitmadeira.com/en/what-to-do/nature-and-adventure/mountain-peaks/paul-da-serra"
   },
   {
     "id": "sugar-cane-factory",
@@ -97,6 +106,7 @@
     "lon": -17.1689,
     "baseId": "calheta",
     "description": "Eneste aktive sukkerrørsfabrik i Europa. Smag Madeira-rom og honningkage.",
-    "icon": "factory"
+    "icon": "factory",
+    "url": "https://www.visitmadeira.com/en/what-to-do/culture-and-traditions/heritage-sites/engenhos-da-calheta"
   }
 ]
