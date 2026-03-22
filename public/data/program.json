@@ -1,0 +1,124 @@
+[
+  {
+    "date": "2026-03-30",
+    "weekday": "Mandag",
+    "label": "Ankomstdag",
+    "baseId": "funchal",
+    "checkIn": "Carvalhal Old Town",
+    "checkOut": null,
+    "events": [
+      { "time": "08:10", "title": "Fly CPH → FNC (DK1124)", "type": "transport", "note": "Ankomst ca. 12:10" },
+      { "time": "12:30", "title": "Hent bil – Funchal Easy Rentacar", "type": "transport", "note": "Skoda Scala, automatgear" },
+      { "time": "14:00", "title": "Check-in: Carvalhal Old Town", "type": "accommodation", "note": "Travessa Conde Carvalhal 18/12" },
+      { "time": "15:00", "title": "Udforsk den gamle bydel", "type": "activity", "note": "Rua de Santa Maria, havnepromenaden" },
+      { "time": "19:00", "title": "Aftensmad", "type": "food", "note": "" }
+    ]
+  },
+  {
+    "date": "2026-03-31",
+    "weekday": "Tirsdag",
+    "label": "Funchal by",
+    "baseId": "funchal",
+    "checkIn": null,
+    "checkOut": null,
+    "events": [
+      { "time": "09:00", "title": "Mercado dos Lavradores", "type": "activity", "note": "Eksotisk frugt, blomster, frisk fisk" },
+      { "time": "10:30", "title": "Kabelbane til Monte", "type": "activity", "note": "Fantastisk udsigt over Funchal" },
+      { "time": "11:30", "title": "Kurveslæde (Toboggan) ned fra Monte", "type": "activity", "note": "Sjov for hele familien!" },
+      { "time": "13:00", "title": "Frokost", "type": "food", "note": "" },
+      { "time": "15:00", "title": "Fri eftermiddag", "type": "activity", "note": "Pool, strand eller shopping" },
+      { "time": "19:00", "title": "Aftensmad", "type": "food", "note": "" }
+    ]
+  },
+  {
+    "date": "2026-04-01",
+    "weekday": "Onsdag",
+    "label": "Udflugt",
+    "baseId": "funchal",
+    "checkIn": null,
+    "checkOut": null,
+    "events": [
+      { "time": "08:00", "title": "Kør til Pico do Arieiro", "type": "transport", "note": "Tjek webcams for skydække først!" },
+      { "time": "10:00", "title": "PR11 Vereda dos Balcões", "type": "hike", "note": "Let vandretur, 45-60 min, fantastisk udsigt" },
+      { "time": "12:00", "title": "Frokost undervejs", "type": "food", "note": "" },
+      { "time": "14:00", "title": "Cabo Girão Skywalk", "type": "activity", "note": "Europas højeste klippeskywalk (580m)" },
+      { "time": "19:00", "title": "Aftensmad i Funchal", "type": "food", "note": "" }
+    ]
+  },
+  {
+    "date": "2026-04-02",
+    "weekday": "Torsdag",
+    "label": "Flytdag → Calheta",
+    "baseId": "calheta",
+    "checkIn": "GuestReady – Escape",
+    "checkOut": "Carvalhal Old Town",
+    "events": [
+      { "time": "10:00", "title": "Check-ud: Carvalhal Old Town", "type": "accommodation", "note": "" },
+      { "time": "10:30", "title": "Kør til Calheta (ca. 45 min)", "type": "transport", "note": "Via kystvejen eller motorvejen" },
+      { "time": "11:30", "title": "Check-in: GuestReady Escape", "type": "accommodation", "note": "Caminho Lombo Atoguia 296" },
+      { "time": "13:00", "title": "Frokost ved Calheta Marina", "type": "food", "note": "" },
+      { "time": "14:30", "title": "Calheta Sandstrand", "type": "activity", "note": "En af de få sandstrande på Madeira" },
+      { "time": "19:00", "title": "Aftensmad", "type": "food", "note": "" }
+    ]
+  },
+  {
+    "date": "2026-04-03",
+    "weekday": "Fredag",
+    "label": "Levada-dag",
+    "baseId": "calheta",
+    "checkIn": null,
+    "checkOut": null,
+    "events": [
+      { "time": "08:00", "title": "Kør til Rabaçal (Paul da Serra)", "type": "transport", "note": "Tjek webcams – bjerget kan være i skyer" },
+      { "time": "09:00", "title": "Levada das 25 Fontes / Alecrim", "type": "hike", "note": "3-4 timer, moderat. Husk miljøgebyr €3 via SIMplifica" },
+      { "time": "13:00", "title": "Frokost", "type": "food", "note": "" },
+      { "time": "15:00", "title": "Porto Moniz Naturpools", "type": "activity", "note": "Eller Seixal sort sandstrand – afhængigt af vejret" },
+      { "time": "19:00", "title": "Aftensmad", "type": "food", "note": "" }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "weekday": "Lørdag",
+    "label": "Flytdag → Caniçal",
+    "baseId": "canical",
+    "checkIn": "Dreams Madeira Resort",
+    "checkOut": "GuestReady – Escape",
+    "events": [
+      { "time": "10:00", "title": "Check-ud: GuestReady Escape", "type": "accommodation", "note": "" },
+      { "time": "10:30", "title": "Kør til Caniçal (ca. 1 time)", "type": "transport", "note": "Langs sydkysten via motorvejen" },
+      { "time": "11:30", "title": "Check-in: Dreams Madeira Resort", "type": "accommodation", "note": "Spa & Marina" },
+      { "time": "13:00", "title": "Frokost i Caniçal by", "type": "food", "note": "Prøv de lokale lapas (limpetter)!" },
+      { "time": "15:00", "title": "Resort – pool & spa", "type": "activity", "note": "Slap af efter flytningen" },
+      { "time": "19:00", "title": "Aftensmad", "type": "food", "note": "" }
+    ]
+  },
+  {
+    "date": "2026-04-05",
+    "weekday": "Søndag",
+    "label": "Påskedag",
+    "baseId": "canical",
+    "checkIn": null,
+    "checkOut": null,
+    "events": [
+      { "time": "08:30", "title": "PR8 Ponta de São Lourenço", "type": "hike", "note": "Madeiras barske østspids. De første 45 min giver fuld valuta. Gebyr €3" },
+      { "time": "12:00", "title": "Frokost", "type": "food", "note": "" },
+      { "time": "14:00", "title": "Hvalmuseet i Caniçal", "type": "activity", "note": "Eller påskeprocessioner i Machico/Funchal" },
+      { "time": "16:00", "title": "Fri eftermiddag", "type": "activity", "note": "Pool, strand, eller kør til Machico" },
+      { "time": "19:00", "title": "Sidste aftensmad på Madeira", "type": "food", "note": "Gør den god! 🎉" }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "weekday": "Mandag",
+    "label": "Hjemrejsedag",
+    "baseId": "canical",
+    "checkIn": null,
+    "checkOut": "Dreams Madeira Resort",
+    "events": [
+      { "time": "09:00", "title": "Check-ud: Dreams Madeira Resort", "type": "accommodation", "note": "" },
+      { "time": "09:30", "title": "Kør til lufthavnen (20 min)", "type": "transport", "note": "Aflever bil ved Funchal Easy Rentacar" },
+      { "time": "11:00", "title": "Lufthavnen – check-in", "type": "transport", "note": "" },
+      { "time": "13:30", "title": "Fly FNC → CPH (DK1125)", "type": "transport", "note": "Ankomst København ca. 19:05" }
+    ]
+  }
+]

@@ -21,9 +21,11 @@ const LOCATIONS = [
 ];
 
 const WEBCAMS = [
-  { label: 'Funchal Marina', url: 'https://www.netmadeira.com/webcam-funchal' },
-  { label: 'Paul da Serra', url: 'https://www.netmadeira.com/webcam-paul-da-serra' },
-  { label: 'Pico do Arieiro', url: 'https://www.netmadeira.com/webcam-pico-arieiro' },
+  { label: 'Funchal - Havnen', url: 'https://www.skylinewebcams.com/en/webcam/portugal/madeira/funchal/funchal-marina.html' },
+  { label: 'Funchal - Byen', url: 'https://www.skylinewebcams.com/en/webcam/portugal/madeira/funchal/funchal.html' },
+  { label: 'Câmara de Lobos', url: 'https://www.skylinewebcams.com/en/webcam/portugal/madeira/camara-de-lobos/camara-de-lobos.html' },
+  { label: 'Pico do Arieiro (Windy)', url: 'https://www.windy.com/webcams/1597157053' },
+  { label: 'Netmadeira Webcams', url: 'https://www.netmadeira.com/webcams-madeira' },
 ];
 
 function getCacheKey(lat: number, lon: number) {

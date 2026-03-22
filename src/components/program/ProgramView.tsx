@@ -1,0 +1,128 @@
+import { useEffect, useRef, useState } from 'react';
+
+interface ProgramEvent {
+  time: string;
+  title: string;
+  type: 'transport' | 'accommodation' | 'activity' | 'food' | 'hike';
+  note: string;
+}
+
+interface ProgramDay {
+  date: string;
+  weekday: string;
+  label: string;
+  baseId: string;
+  checkIn: string | null;
+  checkOut: string | null;
+  events: ProgramEvent[];
+}
+
+const typeStyles: Record<string, { bg: string; icon: string }> = {
+  transport: { bg: 'bg-blue-50 dark:bg-blue-900/30 border-blue-200 dark:border-blue-800', icon: '🚗' },
+  accommodation: { bg: 'bg-purple-50 dark:bg-purple-900/30 border-purple-200 dark:border-purple-800', icon: '🏠' },
+  activity: { bg: 'bg-amber-50 dark:bg-amber-900/30 border-amber-200 dark:border-amber-800', icon: '⭐' },
+  food: { bg: 'bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800', icon: '🍽️' },
+  hike: { bg: 'bg-emerald-50 dark:bg-emerald-900/30 border-emerald-200 dark:border-emerald-800', icon: '🥾' },
+};
+
+const baseColors: Record<string, string> = {
+  funchal: 'bg-ocean text-white',
+  calheta: 'bg-sun text-slate-900',
+  canical: 'bg-lava text-white',
+};
+
+function isToday(dateStr: string): boolean {
+  return new Date().toISOString().split('T')[0] === dateStr;
+}
+
+export function ProgramView() {
+  const [days, setDays] = useState<ProgramDay[]>([]);
+  const todayRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    fetch(import.meta.env.BASE_URL + 'data/program.json')
+      .then((r) => r.json())
+      .then(setDays)
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    if (todayRef.current) {
+      todayRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [days]);
+
+  return (
+    <div className="p-4 pb-6 max-w-lg mx-auto">
+      <div className="text-center mb-4">
+        <h2 className="text-lg font-bold">Program</h2>
+        <p className="text-xs text-slate-500 dark:text-slate-400">
+          30. marts – 6. april 2026
+        </p>
+      </div>
+
+      <div className="space-y-6">
+        {days.map((day) => {
+          const today = isToday(day.date);
+          return (
+            <div
+              key={day.date}
+              ref={today ? todayRef : undefined}
+              className={`rounded-xl overflow-hidden border ${
+                today
+                  ? 'border-sun shadow-lg shadow-sun/20'
+                  : 'border-slate-200 dark:border-slate-700'
+              }`}
+            >
+              {/* Day header */}
+              <div className={`px-4 py-3 ${baseColors[day.baseId] || 'bg-slate-600 text-white'}`}>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="font-bold text-sm">{day.weekday} {day.date.split('-')[2]}. {getMonth(day.date)}</span>
+                    {today && <span className="ml-2 text-xs bg-white/20 rounded-full px-2 py-0.5">I dag</span>}
+                  </div>
+                  <span className="text-xs font-medium opacity-80">{day.label}</span>
+                </div>
+                {(day.checkOut || day.checkIn) && (
+                  <div className="text-xs mt-1 opacity-80">
+                    {day.checkOut && <span>Check-ud: {day.checkOut}</span>}
+                    {day.checkOut && day.checkIn && <span> → </span>}
+                    {day.checkIn && <span>Check-in: {day.checkIn}</span>}
+                  </div>
+                )}
+              </div>
+
+              {/* Events timeline */}
+              <div className="bg-white dark:bg-slate-800 divide-y divide-slate-100 dark:divide-slate-700">
+                {day.events.map((event, i) => {
+                  const style = typeStyles[event.type] || typeStyles.activity;
+                  return (
+                    <div key={i} className={`flex gap-3 px-4 py-3 ${style.bg} border-l-4 ${style.bg.includes('border') ? '' : 'border-slate-200'}`}>
+                      <div className="shrink-0 w-12 text-right">
+                        <span className="text-xs font-mono text-slate-500 dark:text-slate-400">{event.time}</span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-1.5">
+                          <span className="text-sm">{style.icon}</span>
+                          <span className="text-sm font-medium">{event.title}</span>
+                        </div>
+                        {event.note && (
+                          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{event.note}</p>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function getMonth(dateStr: string): string {
+  const month = parseInt(dateStr.split('-')[1]);
+  return month === 3 ? 'mar' : 'apr';
+}
