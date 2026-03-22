@@ -10,86 +10,86 @@
       { "time": "08:10", "title": "Fly CPH → FNC (DK1124)", "type": "transport", "note": "Ankomst ca. 12:10", "details": "Sunclass Airlines charterfly. Flyvetid ca. 4 timer.", "links": [] },
       { "time": "12:30", "title": "Hent bil – Funchal Easy Rentacar", "type": "transport", "note": "Skoda Scala, automatgear", "details": "Biludlejeren ligger tæt på lufthavnen.", "links": [{"label": "Ring til biludlejer", "url": "tel:+351291000000"}] },
       { "time": "14:00", "title": "Check-in: Carvalhal Old Town", "type": "accommodation", "note": "Travessa Conde Carvalhal 18/12", "details": "Lejlighed i den gamle bydel. Tæt på havnepromenaden og Rua de Santa Maria.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6505,-16.8977&travelmode=driving"}] },
-      { "time": "15:00", "title": "Udforsk den gamle bydel", "type": "activity", "note": "Rua de Santa Maria, havnepromenaden", "details": "Gå ad Rua de Santa Maria med street art-døre og små restauranter. Fortsæt til havnepromenaden.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6478,-16.9050&travelmode=walking"}] },
-      { "time": "19:00", "title": "Aftensmad", "type": "food", "note": "", "details": "Første aften – prøv et af stederne på Rua de Santa Maria.", "links": [{"label": "Se restauranter", "url": "#/mad"}] }
+      { "time": "15:00", "title": "Udforsk Zona Velha (den gamle bydel)", "type": "activity", "note": "Rua de Santa Maria, street art-døre, havnepromenaden", "details": "Gå ad Rua de Santa Maria og kig efter de malede døre. Fortsæt til havnepromenaden. Tag evt. en hurtig tur med Teleférico (kabelbanen) op til Monte, bare for overblikket.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6478,-16.9050&travelmode=walking"}, {"label": "Teleférico do Funchal", "url": "https://www.telefericodofunchal.com/en/"}] },
+      { "time": "19:00", "title": "Aftensmad: Santa Maria", "type": "food", "note": "Uformel stemning, varieret menu – sushi, burgere eller lokal fisk", "details": "Her er stemningen uformel, og menuen er bred nok til, at både en 13-årig og en 17-årig finder noget lækkert.", "links": [{"label": "Se alle restauranter", "url": "#/mad"}, {"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6476,-16.9048&travelmode=walking"}] }
     ]
   },
   {
     "date": "2026-03-31",
     "weekday": "Tirsdag",
-    "label": "Funchal by",
+    "label": "Over skyerne & Kurveslæder",
     "baseId": "funchal",
     "checkIn": null,
     "checkOut": null,
     "events": [
-      { "time": "09:00", "title": "Mercado dos Lavradores", "type": "activity", "note": "Eksotisk frugt, blomster, frisk fisk", "details": "Funchals farverige bondemarkeded. Smag passionsfrugt og anona. Pas på med fiskesælgerne – de kan være påtrængende.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6487,-16.9062&travelmode=walking"}, {"label": "Læs mere", "url": "https://www.visitmadeira.com/en/what-to-do/tours-and-activities/mercado-dos-lavradores"}] },
-      { "time": "10:30", "title": "Kabelbane til Monte", "type": "activity", "note": "Fantastisk udsigt over Funchal", "details": "Ca. 15 min op til Monte. Besøg den tropiske have og kirken. Returbillet ca. €16/voksen.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6667,-16.8994&travelmode=walking"}, {"label": "Hjemmeside", "url": "https://www.telefericodofunchal.com/en/"}] },
-      { "time": "11:30", "title": "Kurveslæde (Toboggan) ned fra Monte", "type": "activity", "note": "Sjov for hele familien!", "details": "Traditionel kurveslæde ned ad de stejle gader. Ca. €30 for 2 personer. 2 km tur på ca. 10 min.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6727,-16.8997&travelmode=walking"}] },
-      { "time": "13:00", "title": "Frokost", "type": "food", "note": "", "details": "", "links": [{"label": "Se restauranter", "url": "#/mad"}] },
+      { "time": "08:00", "title": "Kør tidligt til Pico do Arieiro", "type": "transport", "note": "Tjek webcams for skydække først!", "details": "Øens 3. højeste punkt (1818m). Ca. 30 min kørsel fra Funchal. Gå de første 30-40 minutter af stien mod Pico Ruivo og vend om – det er her man får de vildeste \"Instagram-billeder\" over skyerne.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7356,-16.9281&travelmode=driving"}, {"label": "Tjek webcam", "url": "https://www.windy.com/webcams/1597157053"}] },
+      { "time": "10:30", "title": "Frokost: Prego på lokal bar", "type": "food", "note": "En hurtig Prego (oksekødssandwich) på vej ned fra bjerget", "details": "Prøv den klassiske madeiresiske Prego – oksekødssandwich med hvidløgssmør i Bolo do Caco-brød.", "links": [] },
+      { "time": "12:00", "title": "Monte Palace Tropical Garden", "type": "activity", "note": "Smuk have med orientalsk tema", "details": "Besøg den tropiske have i Monte. Smuk have, men højdepunktet for de store børn er turen ned i de berømte Toboggans bagefter.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6727,-16.8997&travelmode=driving"}, {"label": "Hjemmeside", "url": "https://www.telefericodofunchal.com/en/"}] },
+      { "time": "13:30", "title": "Kurveslæde (Toboggan) ned fra Monte", "type": "activity", "note": "Sjov for hele familien!", "details": "Traditionelle flettede kurveslæder, der kører på asfalten. Ca. €30 for 2 personer. 2 km tur på ca. 10 min.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6727,-16.8997&travelmode=walking"}] },
       { "time": "15:00", "title": "Fri eftermiddag", "type": "activity", "note": "Pool, strand eller shopping", "details": "Slap af ved poolen, gå en tur langs Lido-promenaden, eller shop i centrum.", "links": [] },
-      { "time": "19:00", "title": "Aftensmad", "type": "food", "note": "", "details": "", "links": [{"label": "Se restauranter", "url": "#/mad"}] }
+      { "time": "19:00", "title": "Aftensmad: Kampo by Chef Júlio Pereira", "type": "food", "note": "Moderne, hipt – mad lavet over åben ild", "details": "Trendy farm-to-table restaurant med åbent køkken. Book bord!", "links": [{"label": "Se alle restauranter", "url": "#/mad"}, {"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6500,-16.9070&travelmode=walking"}] }
     ]
   },
   {
     "date": "2026-04-01",
     "weekday": "Onsdag",
-    "label": "Udflugt",
+    "label": "Glasgulv & Fugle på hånden",
     "baseId": "funchal",
     "checkIn": null,
     "checkOut": null,
     "events": [
-      { "time": "08:00", "title": "Kør til Pico do Arieiro", "type": "transport", "note": "Tjek webcams for skydække først!", "details": "Ca. 30 min kørsel fra Funchal. Vejen er stejl men asfalteret. Over skyerne er det magisk.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7356,-16.9281&travelmode=driving"}, {"label": "Tjek webcam", "url": "https://www.windy.com/webcams/1597157053"}] },
-      { "time": "10:00", "title": "PR11 Vereda dos Balcões", "type": "hike", "note": "Let vandretur, 45-60 min, fantastisk udsigt", "details": "Super let sti langs en levada. Balcões-udsigtspunktet giver panoramaudsigt over Ribeira da Metade-dalen og de højeste tinder.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7456,-16.8853&travelmode=driving"}] },
-      { "time": "12:00", "title": "Frokost undervejs", "type": "food", "note": "", "details": "", "links": [] },
-      { "time": "14:00", "title": "Cabo Girão Skywalk", "type": "activity", "note": "Europas højeste klippeskywalk (580m)", "details": "Gratis adgang. Glasplatform der hænger 580m over havet. Ikke for dem med højdeskræk!", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6567,-17.0089&travelmode=driving"}, {"label": "Læs mere", "url": "https://www.visitmadeira.com/en/what-to-do/tours-and-activities/miradouro-cabo-girao"}] },
-      { "time": "19:00", "title": "Aftensmad i Funchal", "type": "food", "note": "", "details": "Sidste aften i Funchal!", "links": [{"label": "Se restauranter", "url": "#/mad"}] }
+      { "time": "09:00", "title": "Cabo Girão Skywalk", "type": "activity", "note": "En af verdens højeste havklipper med glasgulv (580m)", "details": "Gratis adgang. Glasplatform der hænger 580m over havet. Det giver et sug i maven – ikke for dem med højdeskræk!", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6567,-17.0089&travelmode=driving"}, {"label": "Læs mere", "url": "https://www.visitmadeira.com/en/what-to-do/tours-and-activities/miradouro-cabo-girao"}] },
+      { "time": "11:00", "title": "PR11 Vereda dos Balcões", "type": "hike", "note": "Flad gåtur 1,5 km hver vej (ca. 45 min). Tag fuglefrø med!", "details": "Kør mod Ribeiro Frio. Super let sti langs en levada. Tag lidt fuglefrø med; de små fugle lander direkte på jeres hænder ved Balcões-udsigtspunktet! Panoramaudsigt over Ribeira da Metade-dalen.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7456,-16.8853&travelmode=driving"}] },
+      { "time": "13:00", "title": "Frokost undervejs", "type": "food", "note": "", "details": "", "links": [] },
+      { "time": "15:00", "title": "Mercado dos Lavradores", "type": "activity", "note": "Eksotisk frugt, blomster, frisk fisk", "details": "Funchals farverige bondemarked. Smag passionsfrugt og anona. Pas på med fiskesælgerne – de kan være påtrængende.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6487,-16.9062&travelmode=walking"}] },
+      { "time": "19:00", "title": "Aftensmad: Armazém do Sal", "type": "food", "note": "Fin afslutning på Funchal – gammelt saltlager. Book bord!", "details": "En lidt mere \"fin\" afslutning på Funchal-opholdet. Moderne Michelin-anbefalet køkken i et gammelt saltlager.", "links": [{"label": "Se alle restauranter", "url": "#/mad"}, {"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6462,-16.9080&travelmode=walking"}] }
     ]
   },
   {
     "date": "2026-04-02",
     "weekday": "Torsdag",
-    "label": "Flytdag → Calheta",
+    "label": "Vandfalds-ruten → Calheta",
     "baseId": "calheta",
     "checkIn": "GuestReady – Escape",
     "checkOut": "Carvalhal Old Town",
     "events": [
       { "time": "10:00", "title": "Check-ud: Carvalhal Old Town", "type": "accommodation", "note": "", "details": "", "links": [] },
-      { "time": "10:30", "title": "Kør til Calheta (ca. 45 min)", "type": "transport", "note": "Via kystvejen eller motorvejen", "details": "Motorvejen (Via Rápida) er hurtigst. Kystvejen er smukkere men langsommere.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7238,-17.1648&travelmode=driving"}] },
-      { "time": "11:30", "title": "Check-in: GuestReady Escape", "type": "accommodation", "note": "Caminho Lombo Atoguia 296", "details": "Lejlighed med hav- og bjergustigt. I det solrige Calheta-område.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7238,-17.1648&travelmode=driving"}] },
-      { "time": "13:00", "title": "Frokost ved Calheta Marina", "type": "food", "note": "", "details": "", "links": [{"label": "Se restauranter", "url": "#/mad"}] },
-      { "time": "14:30", "title": "Calheta Sandstrand", "type": "activity", "note": "En af de få sandstrande på Madeira", "details": "Importeret lyst sand, roligt vand. God til børn. Lige ved marinaen.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7184,-17.1738&travelmode=driving"}, {"label": "Læs mere", "url": "https://www.visitmadeira.com/en/what-to-do/sea/beaches/praia-da-calheta"}] },
-      { "time": "19:00", "title": "Aftensmad", "type": "food", "note": "", "details": "", "links": [{"label": "Se restauranter", "url": "#/mad"}] }
+      { "time": "10:30", "title": "Kør vestpå langs sydkysten", "type": "transport", "note": "Stop ved Cascata dos Anjos!", "details": "Kør langs kystvejen. Stop i Cascata dos Anjos (Ponta do Sol) – et vandfald der falder direkte ned på den gamle vej. Man kan køre bilen igennem det!", "links": [{"label": "Rutevejledning til Cascata dos Anjos", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6823,-17.0617&travelmode=driving"}, {"label": "Videre til Calheta", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7238,-17.1648&travelmode=driving"}] },
+      { "time": "12:00", "title": "Check-in: GuestReady Escape", "type": "accommodation", "note": "Caminho Lombo Atoguia 296", "details": "Lejlighed med hav- og bjergustigt. I det solrige Calheta-område.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7238,-17.1648&travelmode=driving"}] },
+      { "time": "13:00", "title": "Engenho da Calheta (sukkerrørsfabrikken)", "type": "activity", "note": "Smag deres honningkage og rom!", "details": "Besøg den eneste fungerende sukkerrørsfabrik på Madeira. Smag den lokale honningkage (Bolo de Mel) og Aguardente de Cana (sukkerrørsrom).", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7178,-17.1689&travelmode=driving"}] },
+      { "time": "14:30", "title": "Calheta Sandstrand", "type": "activity", "note": "En af de få sandstrande på Madeira", "details": "Importeret lyst sand, roligt vand. God til børn. Lige ved marinaen.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7184,-17.1738&travelmode=driving"}] },
+      { "time": "19:00", "title": "Aftensmad: Manifattura Di Gelato", "type": "food", "note": "Pizza, pasta og øens bedste is til dessert!", "details": "Fantastisk pizza/pasta ved marinaen. Afslut med deres fantastiske is.", "links": [{"label": "Se alle restauranter", "url": "#/mad"}, {"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7180,-17.1742&travelmode=walking"}] }
     ]
   },
   {
     "date": "2026-04-03",
     "weekday": "Fredag",
-    "label": "Levada-dag",
+    "label": "Langfredag – Levada & Nordkyst",
     "baseId": "calheta",
     "checkIn": null,
     "checkOut": null,
     "events": [
-      { "time": "08:00", "title": "Kør til Rabaçal (Paul da Serra)", "type": "transport", "note": "Tjek webcams – bjerget kan være i skyer", "details": "Ca. 25 min kørsel op til Paul da Serra. Parker ved Rabaçal-parkeringspladsen og tag minibussen eller gå ned.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7610,-17.0695&travelmode=driving"}] },
-      { "time": "09:00", "title": "Levada das 25 Fontes / Alecrim", "type": "hike", "note": "3-4 timer, moderat. Husk miljøgebyr €3 via SIMplifica", "details": "Start fra Rabaçal. 25 Fontes er 4.6 km (t/r). Kan kombineres med Levada do Alecrim for ekstra 2 km. Medbring vand og snacks.", "links": [{"label": "Betal gebyr (€3)", "url": "https://simplifica.madeira.gov.pt"}, {"label": "Tjek trail alerts", "url": "https://ifcn.madeira.gov.pt/en/activities/walking-routes/trail-alerts.html"}] },
+      { "time": "08:00", "title": "Kør op på Paúl da Serra", "type": "transport", "note": "Tjek webcams – bjerget kan være i skyer", "details": "Ca. 25 min kørsel op til højsletten. Parker ved Rabaçal-parkeringspladsen og tag minibussen eller gå ned.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7610,-17.0695&travelmode=driving"}] },
+      { "time": "09:00", "title": "Levada do Alecrim", "type": "hike", "note": "Næsten helt flad, ca. 2 timer t/r. Ender ved sø og vandfald", "details": "Start fra Rabaçal. Næsten helt flad sti der ender ved en smuk sø og vandfald (Dona Beja). Kan kombineres med 25 Fontes (ekstra 2 km). Husk miljøgebyr €3 via SIMplifica. Medbring vand og snacks.", "links": [{"label": "Betal gebyr (€3)", "url": "https://simplifica.madeira.gov.pt"}, {"label": "Tjek trail alerts", "url": "https://ifcn.madeira.gov.pt/en/activities/walking-routes/trail-alerts.html"}] },
       { "time": "13:00", "title": "Frokost", "type": "food", "note": "", "details": "", "links": [] },
-      { "time": "15:00", "title": "Porto Moniz Naturpools", "type": "activity", "note": "Eller Seixal sort sandstrand – afhængigt af vejret", "details": "Naturlige pools dannet i lavaklipperne. Entré ca. €3. Alternativt: Seixal sort sandstrand 15 min østpå.", "links": [{"label": "Rutevejledning (Porto Moniz)", "url": "https://www.google.com/maps/dir/?api=1&destination=32.8261,-17.1689&travelmode=driving"}, {"label": "Rutevejledning (Seixal)", "url": "https://www.google.com/maps/dir/?api=1&destination=32.8127,-17.1082&travelmode=driving"}] },
-      { "time": "19:00", "title": "Aftensmad", "type": "food", "note": "", "details": "", "links": [{"label": "Se restauranter", "url": "#/mad"}] }
+      { "time": "14:30", "title": "Porto Moniz eller Seixal", "type": "activity", "note": "Naturlige lavapools eller sort sandstrand", "details": "Kør ned til nordkysten. Porto Moniz: naturlige pools dannet i lavaklipperne (entré ca. €3). Seixal: smuk sort sandstrand 15 min østpå. Hop i de naturlige lavapools!", "links": [{"label": "Rutevejledning (Porto Moniz)", "url": "https://www.google.com/maps/dir/?api=1&destination=32.8261,-17.1689&travelmode=driving"}, {"label": "Rutevejledning (Seixal)", "url": "https://www.google.com/maps/dir/?api=1&destination=32.8127,-17.1082&travelmode=driving"}] },
+      { "time": "19:00", "title": "Aftensmad: Convento das Vinhas", "type": "food", "note": "Panoramaudsigt over Calheta-dalen. Espetada!", "details": "Nyd udsigten over Calheta-dalen og havet, mens I spiser traditionelle kødretter som Espetada.", "links": [{"label": "Se alle restauranter", "url": "#/mad"}, {"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7210,-17.1580&travelmode=driving"}] }
     ]
   },
   {
     "date": "2026-04-04",
     "weekday": "Lørdag",
-    "label": "Flytdag → Caniçal",
+    "label": "Drage-landskaber → Caniçal",
     "baseId": "canical",
     "checkIn": "Dreams Madeira Resort",
     "checkOut": "GuestReady – Escape",
     "events": [
       { "time": "10:00", "title": "Check-ud: GuestReady Escape", "type": "accommodation", "note": "", "details": "", "links": [] },
-      { "time": "10:30", "title": "Kør til Caniçal (ca. 1 time)", "type": "transport", "note": "Langs sydkysten via motorvejen", "details": "Via Rápida hele vejen. Resortet ligger helt ude ved østspidsen.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7424,-16.7098&travelmode=driving"}] },
-      { "time": "11:30", "title": "Check-in: Dreams Madeira Resort", "type": "accommodation", "note": "Spa & Marina", "details": "Luksusresort med pool, spa og marina. Nyd de sidste dage!", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7424,-16.7098&travelmode=driving"}] },
+      { "time": "10:30", "title": "Kør mod øst – stop i Machico", "type": "transport", "note": "Se den gyldne sandstrand (importeret fra Sahara)", "details": "Kør Via Rápida mod øst. Stop i Machico og se den gyldne sandstrand.", "links": [{"label": "Rutevejledning til Machico", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7186,-16.7647&travelmode=driving"}, {"label": "Videre til resort", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7424,-16.7098&travelmode=driving"}] },
+      { "time": "12:00", "title": "Check-in: Dreams Madeira Resort", "type": "accommodation", "note": "Spa & Marina", "details": "Luksusresort med pool, spa og marina. Nyd de sidste dage!", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7424,-16.7098&travelmode=driving"}] },
       { "time": "13:00", "title": "Frokost i Caniçal by", "type": "food", "note": "Prøv de lokale lapas (limpetter)!", "details": "Den lille fiskerby har autentiske seafood-restauranter.", "links": [{"label": "Se restauranter", "url": "#/mad"}] },
-      { "time": "15:00", "title": "Resort – pool & spa", "type": "activity", "note": "Slap af efter flytningen", "details": "", "links": [] },
-      { "time": "19:00", "title": "Aftensmad", "type": "food", "note": "", "details": "", "links": [{"label": "Se restauranter", "url": "#/mad"}] }
+      { "time": "15:00", "title": "PR8 Ponta de São Lourenço", "type": "hike", "note": "Råt, tørt og vulkansk landskab. Gebyr €3", "details": "Landskabet her er helt anderledes – råt, tørt og vulkansk. Gå kun til det første eller andet plateau (ca. 1 time i alt). Det er rigeligt til at se de lodrette klipper i havet.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7488,-16.7058&travelmode=driving"}, {"label": "Betal gebyr (€3)", "url": "https://simplifica.madeira.gov.pt"}] },
+      { "time": "19:00", "title": "Aftensmad: Tasquinha do Pescador", "type": "food", "note": "Bestil Lapas med hvidløgssmør til deling", "details": "Meget autentisk og lokal fiskerestaurant i Caniçal by. Bestil \"Lapas\" (grillede limpetter med hvidløgssmør) til deling.", "links": [{"label": "Se alle restauranter", "url": "#/mad"}, {"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7412,-16.7355&travelmode=walking"}] }
     ]
   },
   {
@@ -100,11 +100,11 @@
     "checkIn": null,
     "checkOut": null,
     "events": [
-      { "time": "08:30", "title": "PR8 Ponta de São Lourenço", "type": "hike", "note": "Madeiras barske østspids. De første 45 min giver fuld valuta. Gebyr €3", "details": "Startpunkt lige ved parkeringspladsen i Baía d'Abra. Dramatiske klipper, vild natur. Hele turen er 7.4 km (t/r), men de første 2 km er de mest spektakulære.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7488,-16.7058&travelmode=driving"}, {"label": "Betal gebyr (€3)", "url": "https://simplifica.madeira.gov.pt"}] },
+      { "time": "09:00", "title": "Påskestemning i Caniçal/Machico", "type": "activity", "note": "Smukke blomsterdekorationer i kirkerne", "details": "Oplev påskestemningen. Der vil sandsynligvis være smukke blomsterdekorationer i kirkerne i Caniçal eller Machico.", "links": [] },
+      { "time": "10:30", "title": "Hvalmuseet i Caniçal", "type": "activity", "note": "Overraskende moderne – historien fra hvalfangst til naturbeskyttelse", "details": "Museum om Madeiras hvalfangst-historie. Overraskende moderne og interessant for store børn, da det fortæller historien om, hvordan øen gik fra hvalfangst til naturbeskyttelse.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7410,-16.7352&travelmode=driving"}, {"label": "Læs mere", "url": "https://www.visitmadeira.com/en/what-to-do/culture-and-traditions/museums/museu-da-baleia"}] },
       { "time": "12:00", "title": "Frokost", "type": "food", "note": "", "details": "", "links": [{"label": "Se restauranter", "url": "#/mad"}] },
-      { "time": "14:00", "title": "Hvalmuseet i Caniçal", "type": "activity", "note": "Eller påskeprocessioner i Machico/Funchal", "details": "Museum om Madeiras hvalfangst-historie. Alternativt: Kør til Machico eller Funchal for påskeprocessioner.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7410,-16.7352&travelmode=driving"}, {"label": "Læs mere", "url": "https://www.visitmadeira.com/en/what-to-do/culture-and-traditions/museums/museu-da-baleia"}] },
-      { "time": "16:00", "title": "Fri eftermiddag", "type": "activity", "note": "Pool, strand, eller kør til Machico", "details": "", "links": [] },
-      { "time": "19:00", "title": "Sidste aftensmad på Madeira", "type": "food", "note": "Gør den god!", "details": "Fejr den sidste aften med god seafood.", "links": [{"label": "Se restauranter", "url": "#/mad"}] }
+      { "time": "14:00", "title": "Resort – pool & marina", "type": "activity", "note": "Nyd resortets faciliteter", "details": "Slap af ved poolen, udforsk marinaen, eller kør til Machico for mere påskestemning.", "links": [] },
+      { "time": "19:00", "title": "Sidste aftensmad: Aquarium Restaurant", "type": "food", "note": "Afslutningsmiddag med udsigt over bugten", "details": "En perfekt afslutningsmiddag med udsigt over bugten og friskfanget fisk. Fejr den sidste aften!", "links": [{"label": "Se alle restauranter", "url": "#/mad"}, {"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7416,-16.7348&travelmode=walking"}] }
     ]
   },
   {
@@ -115,8 +115,10 @@
     "checkIn": null,
     "checkOut": "Dreams Madeira Resort",
     "events": [
+      { "time": "08:00", "title": "Lang morgenmad på resortet", "type": "food", "note": "Nyd den sidste morgenmad", "details": "", "links": [] },
       { "time": "09:00", "title": "Check-ud: Dreams Madeira Resort", "type": "accommodation", "note": "", "details": "", "links": [] },
-      { "time": "09:30", "title": "Kør til lufthavnen (20 min)", "type": "transport", "note": "Aflever bil ved Funchal Easy Rentacar", "details": "Biludlejeren har kontor ved lufthavnen.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6942,-16.7745&travelmode=driving"}] },
+      { "time": "09:30", "title": "Pico do Facho (valgfrit)", "type": "activity", "note": "Udkigspost over Machico – et sidste kig over øen", "details": "Kør eventuelt forbi udkigsposten Pico do Facho over Machico for et sidste panoramakig over øen.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.7280,-16.7580&travelmode=driving"}] },
+      { "time": "10:00", "title": "Kør til lufthavnen (20 min)", "type": "transport", "note": "Aflever bil senest kl. 11:30", "details": "Biludlejeren har kontor ved lufthavnen.", "links": [{"label": "Rutevejledning", "url": "https://www.google.com/maps/dir/?api=1&destination=32.6942,-16.7745&travelmode=driving"}] },
       { "time": "11:00", "title": "Lufthavnen – check-in", "type": "transport", "note": "", "details": "", "links": [] },
       { "time": "13:30", "title": "Fly FNC → CPH (DK1125)", "type": "transport", "note": "Ankomst København ca. 19:05", "details": "Sunclass Airlines charterfly. Flyvetid ca. 4 timer.", "links": [] }
     ]

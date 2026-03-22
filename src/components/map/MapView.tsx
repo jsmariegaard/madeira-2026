@@ -244,10 +244,10 @@ export function MapView() {
 
       {/* Legend */}
       <div className="absolute top-2 right-2 z-[1000] bg-white/90 dark:bg-slate-800/90 rounded-lg px-3 py-2 text-xs shadow-md space-y-0.5">
-        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-blue-500"></span> Overnatning</div>
-        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-red-500"></span> Seværdighed</div>
+        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-teal-500"></span> Overnatning</div>
+        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-blue-600"></span> Seværdighed</div>
         <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-500"></span> Vandring</div>
-        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-pink-500"></span> Mad & Drikke</div>
+        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-pink-400"></span> Mad & Drikke</div>
       </div>
 
       {/* Locate button */}

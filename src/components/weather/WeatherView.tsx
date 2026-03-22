@@ -17,15 +17,22 @@ interface ForecastData {
 }
 
 const LOCATIONS = [
-  { label: 'Pico do Arieiro', lat: 32.7356, lon: -16.9281 },
+  { label: 'Pico do Arieiro (1818m)', lat: 32.7356, lon: -16.9281 },
 ];
 
 const WEBCAMS = [
-  { label: 'Funchal - Havnen', url: 'https://www.skylinewebcams.com/en/webcam/portugal/madeira/funchal/funchal-marina.html' },
-  { label: 'Funchal - Byen', url: 'https://www.skylinewebcams.com/en/webcam/portugal/madeira/funchal/funchal.html' },
-  { label: 'Câmara de Lobos', url: 'https://www.skylinewebcams.com/en/webcam/portugal/madeira/camara-de-lobos/camara-de-lobos.html' },
-  { label: 'Pico do Arieiro (Windy)', url: 'https://www.windy.com/webcams/1597157053' },
-  { label: 'Netmadeira Webcams', url: 'https://www.netmadeira.com/webcams-madeira' },
+  { label: 'Funchal - Havnen', url: 'https://www.skylinewebcams.com/en/webcam/portugal/madeira/funchal/funchal-marina.html', source: 'skylinewebcams.com' },
+  { label: 'Funchal - Byen', url: 'https://www.skylinewebcams.com/en/webcam/portugal/madeira/funchal/funchal.html', source: 'skylinewebcams.com' },
+  { label: 'Câmara de Lobos', url: 'https://www.skylinewebcams.com/en/webcam/portugal/madeira/camara-de-lobos/camara-de-lobos.html', source: 'skylinewebcams.com' },
+  { label: 'Pico do Arieiro', url: 'https://www.windy.com/webcams/1597157053', source: 'windy.com' },
+  { label: 'Netmadeira (alle)', url: 'https://www.netmadeira.com/webcams-madeira', source: 'netmadeira.com' },
+];
+
+const WEATHER_RESOURCES = [
+  { label: 'Windy.com – Madeira', url: 'https://www.windy.com/32.75/-16.95?rain,32.75,-16.95,10', description: 'Interaktivt vejrkort med vind, regn, skyer og bølger' },
+  { label: 'Regnradar – Madeira', url: 'https://www.windy.com/32.75/-16.95?radar,32.75,-16.95,8', description: 'Live regnradar – se præcis hvor det regner nu' },
+  { label: 'IPMA – Madeira', url: 'https://www.ipma.pt/en/otempo/prev.localidade/#Funchal&Madeira', description: 'Portugals meteorologiske institut – officiel prognose' },
+  { label: 'Surf & Bølger', url: 'https://www.windy.com/32.75/-16.95?waves,32.75,-16.95,8', description: 'Bølgehøjde og vindforhold for kysten' },
 ];
 
 function getCacheKey(lat: number, lon: number) {
@@ -49,7 +56,6 @@ async function fetchWeather(lat: number, lon: number): Promise<ForecastData | nu
     localStorage.setItem(key, JSON.stringify({ data, ts: Date.now() }));
     return data;
   } catch {
-    // Return cached if available
     if (cached) return JSON.parse(cached).data;
     return null;
   }
@@ -89,14 +95,13 @@ function ForecastCard({ label, lat, lon }: { label: string; lat: number; lon: nu
       <div className="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm">
         <h3 className="font-semibold text-sm mb-2">{label}</h3>
         <p className="text-slate-400 text-sm">
-          {API_KEY ? 'Kunne ikke hente vejrdata. Tjek forbindelsen.' : 'Ingen API-nøgle konfigureret (VITE_OWM_API_KEY)'}
+          {API_KEY ? 'Kunne ikke hente vejrdata.' : 'Ingen API-nøgle (VITE_OWM_API_KEY)'}
         </p>
       </div>
     );
   }
 
   const hourly = data.list.slice(0, 8);
-  // Daily: pick one entry per day (noon-ish)
   const dailyMap = new Map<string, ForecastItem>();
   for (const item of data.list) {
     const day = new Date(item.dt * 1000).toDateString();
@@ -109,9 +114,19 @@ function ForecastCard({ label, lat, lon }: { label: string; lat: number; lon: nu
 
   return (
     <div className="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm">
-      <h3 className="font-semibold text-sm mb-3">{label}</h3>
+      <div className="flex items-center justify-between mb-3">
+        <h3 className="font-semibold text-sm">{label}</h3>
+        <a
+          href={`https://www.windy.com/${lat}/${lon}?rain,${lat},${lon},12`}
+          target="_blank"
+          rel="noopener"
+          className="text-xs text-ocean dark:text-sky-400 font-medium"
+        >
+          Windy →
+        </a>
+      </div>
 
-      {/* Hourly (next 8 × 3h) */}
+      {/* Hourly */}
       <div className="flex gap-2 overflow-x-auto pb-2 mb-3">
         {hourly.map((item) => (
           <div key={item.dt} className="flex flex-col items-center min-w-[60px] text-xs">
@@ -174,10 +189,32 @@ export function WeatherView() {
           <ForecastCard key={base.id} label={base.name} lat={base.lat} lon={base.lon} />
         ))}
 
+      {/* Radar & Weather Resources */}
+      <div className="space-y-2">
+        <h3 className="font-semibold text-sm">Radar & Vejrkort</h3>
+        {WEATHER_RESOURCES.map((res) => (
+          <a
+            key={res.label}
+            href={res.url}
+            target="_blank"
+            rel="noopener"
+            className="block bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <span className="font-medium text-sm">{res.label}</span>
+                <p className="text-xs text-slate-500 dark:text-slate-400">{res.description}</p>
+              </div>
+              <span className="text-ocean dark:text-sky-400 text-sm shrink-0 ml-2">Åbn →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
       {/* Webcams */}
-      <div className="space-y-3">
+      <div className="space-y-2">
         <h3 className="font-semibold text-sm">Live Webcams</h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400 -mt-2">
+        <p className="text-xs text-slate-500 dark:text-slate-400 -mt-1">
           Webcams er sandheden — tjek bjergtoppene for skydække!
         </p>
         {WEBCAMS.map((cam) => (
@@ -191,7 +228,7 @@ export function WeatherView() {
             <div className="flex items-center justify-between">
               <div>
                 <span className="font-medium text-sm">{cam.label}</span>
-                <span className="text-xs text-slate-400 ml-2">netmadeira.com</span>
+                <span className="text-xs text-slate-400 ml-2">{cam.source}</span>
               </div>
               <span className="text-ocean dark:text-sky-400 text-sm">Åbn →</span>
             </div>
