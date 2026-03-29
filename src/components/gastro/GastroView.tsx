@@ -1,22 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useBase } from '../../context/BaseContext';
 import { FavoriteButton } from '../shared/FavoriteButton';
-
-interface Restaurant {
-  id: string;
-  name: string;
-  category: string;
-  lat: number;
-  lon: number;
-  baseId: string;
-  priceRange: number;
-  cuisine: string;
-  notes: string;
-  googleMapsUrl: string;
-  googleRating: number | null;
-  tripadvisorRating: number | null;
-  tripadvisorUrl: string | null;
-}
+import { mapsUrl } from '../../utils/urls';
+import { useData } from '../../hooks/useData';
+import type { Restaurant } from '../../types';
 
 const categoryLabels: Record<string, string> = {
   restaurant: 'Restaurant',
@@ -39,15 +26,8 @@ function Stars({ rating }: { rating: number }) {
 
 export function GastroView() {
   const { currentBase } = useBase();
-  const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  const restaurants = useData<Restaurant>('data/restaurants.json');
   const [filter, setFilter] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetch(import.meta.env.BASE_URL + 'data/restaurants.json')
-      .then((r) => r.json())
-      .then(setRestaurants)
-      .catch(() => {});
-  }, []);
 
   const filtered = restaurants
     .filter((r) => r.baseId === currentBase.id)
@@ -135,7 +115,7 @@ export function GastroView() {
             {/* Action links */}
             <div className="flex gap-3 mt-2 pt-2 border-t border-slate-100 dark:border-slate-700">
               <a
-                href={`https://www.google.com/maps/search/?api=1&query=${r.lat},${r.lon}`}
+                href={mapsUrl(r.lat, r.lon)}
                 target="_blank"
                 rel="noopener"
                 className="text-xs font-medium text-ocean dark:text-sky-400"

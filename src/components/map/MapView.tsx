@@ -6,6 +6,9 @@ import { useBase } from '../../context/BaseContext';
 import { bases } from '../../data/bases';
 import { FavoriteButton } from '../shared/FavoriteButton';
 import { cacheTiles, countTiles } from '../../utils/tileCacher';
+import { mapsUrl } from '../../utils/urls';
+import { useData } from '../../hooks/useData';
+import type { POI, Hike, Restaurant } from '../../types';
 
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -19,43 +22,6 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow,
 });
 
-interface POI {
-  id: string;
-  name: string;
-  category: string;
-  lat: number;
-  lon: number;
-  description: string;
-  icon: string;
-  url?: string;
-}
-
-interface Hike {
-  id: string;
-  name: string;
-  difficulty: string;
-  duration: string;
-  distance: string;
-  lat: number;
-  lon: number;
-  description: string;
-  fee: boolean;
-  feeUrl: string | null;
-}
-
-interface Restaurant {
-  id: string;
-  name: string;
-  category: string;
-  lat: number;
-  lon: number;
-  cuisine: string;
-  notes: string;
-  priceRange: number;
-  googleMapsUrl: string;
-  googleRating: number | null;
-  tripadvisorRating: number | null;
-}
 
 function makeIcon(className: string) {
   return new L.Icon({
@@ -73,9 +39,6 @@ const accomIcon = makeIcon('hue-rotate-[200deg] saturate-200 brightness-110');
 const hikeIcon = makeIcon('hue-rotate-[90deg] saturate-200');
 const foodIcon = makeIcon('hue-rotate-[320deg] saturate-200 brightness-125');
 
-function mapsUrl(lat: number, lon: number) {
-  return `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
-}
 
 function PopupLinks({ lat, lon, url, label }: { lat: number; lon: number; url?: string | null; label?: string }) {
   return (
@@ -117,27 +80,12 @@ function FlyToBase({ lat, lon }: { lat: number; lon: number }) {
 
 export function MapView() {
   const { currentBase } = useBase();
-  const [pois, setPois] = useState<POI[]>([]);
-  const [hikes, setHikes] = useState<Hike[]>([]);
-  const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  const pois = useData<POI>('data/pois.json');
+  const hikes = useData<Hike>('data/hikes.json');
+  const restaurants = useData<Restaurant>('data/restaurants.json');
   const [userPos, setUserPos] = useState<[number, number] | null>(null);
   const [cacheProgress, setCacheProgress] = useState<{ done: number; total: number } | null>(null);
   const abortRef = useRef<AbortController | null>(null);
-
-  useEffect(() => {
-    fetch(import.meta.env.BASE_URL + 'data/pois.json')
-      .then((r) => r.json())
-      .then(setPois)
-      .catch(() => {});
-    fetch(import.meta.env.BASE_URL + 'data/hikes.json')
-      .then((r) => r.json())
-      .then(setHikes)
-      .catch(() => {});
-    fetch(import.meta.env.BASE_URL + 'data/restaurants.json')
-      .then((r) => r.json())
-      .then(setRestaurants)
-      .catch(() => {});
-  }, []);
 
   const handleLocate = () => {
     navigator.geolocation?.getCurrentPosition(
