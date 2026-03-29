@@ -13,13 +13,22 @@ export function FavoriteButton({ id }: { id: string }) {
   return (
     <span className="inline-flex gap-0.5">
       {OPTIONS.map((opt) => (
-        <button
+        <span
           key={opt.status}
+          role="button"
+          tabIndex={0}
           onClick={(e) => {
             e.stopPropagation();
             setFavorite(id, current === opt.status ? null : opt.status);
           }}
-          className={`w-6 h-6 text-xs rounded transition-all ${
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              e.stopPropagation();
+              setFavorite(id, current === opt.status ? null : opt.status);
+            }
+          }}
+          className={`w-6 h-6 text-xs rounded transition-all cursor-pointer inline-flex items-center justify-center ${
             current === opt.status
               ? 'scale-110 opacity-100'
               : 'opacity-30 hover:opacity-60'
@@ -28,7 +37,7 @@ export function FavoriteButton({ id }: { id: string }) {
           title={opt.label}
         >
           {opt.icon}
-        </button>
+        </span>
       ))}
     </span>
   );
