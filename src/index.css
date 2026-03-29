@@ -31,3 +31,12 @@ body {
   width: 100%;
   height: 100%;
 }
+
+/* Favorite marker styles */
+.fav-yes {
+  filter: drop-shadow(0 0 4px #f59e0b) drop-shadow(0 0 8px #f59e0b);
+}
+.fav-no {
+  opacity: 0.35 !important;
+  filter: grayscale(100%);
+}

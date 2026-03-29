@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useBase } from '../../context/BaseContext';
 import { FavoriteButton } from '../shared/FavoriteButton';
-import { mapsUrl } from '../../utils/urls';
+import { mapsSearchUrl } from '../../utils/urls';
 import { useData } from '../../hooks/useData';
 import type { Restaurant } from '../../types';
 
@@ -115,7 +115,7 @@ export function GastroView() {
             {/* Action links */}
             <div className="flex gap-3 mt-2 pt-2 border-t border-slate-100 dark:border-slate-700">
               <a
-                href={mapsUrl(r.lat, r.lon)}
+                href={mapsSearchUrl(r.name)}
                 target="_blank"
                 rel="noopener"
                 className="text-xs font-medium text-ocean dark:text-sky-400"

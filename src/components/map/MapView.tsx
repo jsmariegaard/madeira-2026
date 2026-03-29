@@ -5,8 +5,9 @@ import 'leaflet/dist/leaflet.css';
 import { useBase } from '../../context/BaseContext';
 import { bases } from '../../data/bases';
 import { FavoriteButton } from '../shared/FavoriteButton';
+import { useFavorites, type FavoriteStatus } from '../../context/FavoritesContext';
 import { cacheTiles, countTiles } from '../../utils/tileCacher';
-import { mapsUrl } from '../../utils/urls';
+import { mapsUrl, mapsSearchUrl } from '../../utils/urls';
 import { useData } from '../../hooks/useData';
 import type { POI, Hike, Restaurant } from '../../types';
 
@@ -23,7 +24,8 @@ L.Icon.Default.mergeOptions({
 });
 
 
-function makeIcon(className: string) {
+function makeIcon(className: string, favStatus?: FavoriteStatus) {
+  const favClass = favStatus === 'yes' ? 'fav-yes' : favStatus === 'no' ? 'fav-no' : '';
   return new L.Icon({
     iconUrl: markerIcon,
     iconRetinaUrl: markerIcon2x,
@@ -31,20 +33,22 @@ function makeIcon(className: string) {
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
-    className,
+    className: `${className} ${favClass}`.trim(),
   });
 }
 
 const accomIcon = makeIcon('hue-rotate-[200deg] saturate-200 brightness-110');
-const hikeIcon = makeIcon('hue-rotate-[90deg] saturate-200');
-const foodIcon = makeIcon('hue-rotate-[320deg] saturate-200 brightness-125');
+
+function poiIcon(fav?: FavoriteStatus) { return makeIcon('', fav); }
+function hikeIcon(fav?: FavoriteStatus) { return makeIcon('hue-rotate-[90deg] saturate-200', fav); }
+function foodIcon(fav?: FavoriteStatus) { return makeIcon('hue-rotate-[320deg] saturate-200 brightness-125', fav); }
 
 
-function PopupLinks({ lat, lon, url, label }: { lat: number; lon: number; url?: string | null; label?: string }) {
+function PopupLinks({ lat, lon, url, label, name }: { lat: number; lon: number; url?: string | null; label?: string; name?: string }) {
   return (
     <div className="flex gap-3 mt-2 pt-1.5 border-t border-slate-200">
       <a
-        href={mapsUrl(lat, lon)}
+        href={name ? mapsSearchUrl(name) : mapsUrl(lat, lon)}
         target="_blank"
         rel="noopener"
         className="text-xs font-medium text-blue-600 no-underline hover:underline"
@@ -80,6 +84,7 @@ function FlyToBase({ lat, lon }: { lat: number; lon: number }) {
 
 export function MapView() {
   const { currentBase } = useBase();
+  const { getFavorite } = useFavorites();
   const pois = useData<POI>('data/pois.json');
   const hikes = useData<Hike>('data/hikes.json');
   const restaurants = useData<Restaurant>('data/restaurants.json');
@@ -152,7 +157,7 @@ export function MapView() {
                 <span className="text-slate-600">{base.accommodation.address}</span>
                 <br />
                 <span className="text-xs text-slate-500">{base.accommodation.checkIn} → {base.accommodation.checkOut}</span>
-                <PopupLinks lat={base.accommodation.lat} lon={base.accommodation.lon} />
+                <PopupLinks lat={base.accommodation.lat} lon={base.accommodation.lon} name={base.accommodation.name} />
               </div>
             </Popup>
           </Marker>
@@ -160,7 +165,7 @@ export function MapView() {
 
         {/* POI markers (default red) */}
         {pois.map((poi) => (
-          <Marker key={poi.id} position={[poi.lat, poi.lon]}>
+          <Marker key={poi.id} position={[poi.lat, poi.lon]} icon={poiIcon(getFavorite(`poi-${poi.id}`))}>
             <Popup>
               <div className="text-sm min-w-[180px]">
                 <div className="flex items-start justify-between gap-1">
@@ -168,7 +173,7 @@ export function MapView() {
                   <FavoriteButton id={`poi-${poi.id}`} />
                 </div>
                 <span className="text-slate-600">{poi.description}</span>
-                <PopupLinks lat={poi.lat} lon={poi.lon} url={poi.url} label="Læs mere →" />
+                <PopupLinks lat={poi.lat} lon={poi.lon} url={poi.url} label="Læs mere →" name={poi.name} />
               </div>
             </Popup>
           </Marker>
@@ -176,7 +181,7 @@ export function MapView() {
 
         {/* Hike markers (green) */}
         {hikes.map((hike) => (
-          <Marker key={hike.id} position={[hike.lat, hike.lon]} icon={hikeIcon}>
+          <Marker key={hike.id} position={[hike.lat, hike.lon]} icon={hikeIcon(getFavorite(`hike-${hike.id}`))}>
             <Popup>
               <div className="text-sm min-w-[180px]">
                 <div className="flex items-start justify-between gap-1">
@@ -205,7 +210,7 @@ export function MapView() {
 
         {/* Restaurant markers (pink/magenta) */}
         {restaurants.map((r) => (
-          <Marker key={r.id} position={[r.lat, r.lon]} icon={foodIcon}>
+          <Marker key={r.id} position={[r.lat, r.lon]} icon={foodIcon(getFavorite(`rest-${r.id}`))}>
             <Popup>
               <div className="text-sm min-w-[180px]">
                 <div className="flex items-start justify-between gap-1">
@@ -222,7 +227,7 @@ export function MapView() {
                     {r.tripadvisorRating && <span>TripAdvisor: {r.tripadvisorRating}/5</span>}
                   </div>
                 )}
-                <PopupLinks lat={r.lat} lon={r.lon} url={r.googleMapsUrl} label="Google Maps →" />
+                <PopupLinks lat={r.lat} lon={r.lon} url={r.googleMapsUrl} label="Google Maps →" name={r.name} />
               </div>
             </Popup>
           </Marker>
