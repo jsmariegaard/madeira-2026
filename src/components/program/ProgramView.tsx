@@ -39,8 +39,30 @@ const baseColors: Record<string, string> = {
   canical: 'bg-lava text-white',
 };
 
+const TRIP_START = '2026-03-30';
+const TRIP_END = '2026-04-06';
+
 function isToday(dateStr: string): boolean {
   return new Date().toISOString().split('T')[0] === dateStr;
+}
+
+function isDuringTrip(): boolean {
+  const today = new Date().toISOString().split('T')[0];
+  return today >= TRIP_START && today <= TRIP_END;
+}
+
+function currentTimeMinutes(): number {
+  const now = new Date();
+  return now.getHours() * 60 + now.getMinutes();
+}
+
+function parseTime(t: string): number {
+  const [h, m] = t.split(':').map(Number);
+  return h * 60 + m;
+}
+
+function formatCurrentTime(): string {
+  return new Date().toLocaleTimeString('da-DK', { hour: '2-digit', minute: '2-digit' });
 }
 
 function hasExpandableContent(event: ProgramEvent): boolean {
@@ -174,9 +196,33 @@ export function ProgramView() {
 
               {/* Events timeline */}
               <div className="bg-white dark:bg-slate-800 divide-y divide-slate-100 dark:divide-slate-700">
-                {day.events.map((event, i) => (
-                  <EventRow key={i} event={event} />
-                ))}
+                {today && isDuringTrip() && currentTimeMinutes() < parseTime(day.events[0]?.time || '23:59') && (
+                  <div className="flex items-center gap-2 px-4 py-0.5">
+                    <div className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
+                    <div className="flex-1 h-px bg-red-500" />
+                    <span className="text-[10px] font-medium text-red-500 shrink-0">Nu {formatCurrentTime()}</span>
+                  </div>
+                )}
+                {day.events.map((event, i) => {
+                  const showNow = today && isDuringTrip() && (() => {
+                    const now = currentTimeMinutes();
+                    const thisTime = parseTime(event.time);
+                    const nextTime = i < day.events.length - 1 ? parseTime(day.events[i + 1].time) : 24 * 60;
+                    return now >= thisTime && now < nextTime;
+                  })();
+                  return (
+                    <div key={i}>
+                      <EventRow event={event} />
+                      {showNow && (
+                        <div className="flex items-center gap-2 px-4 py-0.5">
+                          <div className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
+                          <div className="flex-1 h-px bg-red-500" />
+                          <span className="text-[10px] font-medium text-red-500 shrink-0">Nu {formatCurrentTime()}</span>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           );

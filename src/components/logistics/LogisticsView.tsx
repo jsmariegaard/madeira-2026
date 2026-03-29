@@ -119,14 +119,14 @@ export function LogisticsView() {
         <h3 className="font-semibold text-sm mb-2 flex items-center gap-1">🥾 Vandrestier</h3>
         <div className="space-y-2">
           <a
-            href="https://ifcn.madeira.gov.pt/en/activities/walking-routes/trail-alerts.html"
+            href="https://ifcn.madeira.gov.pt/en/atividades-de-natureza/percursos-pedestres-recomendados.html"
             target="_blank"
             rel="noopener"
             className="block bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="flex items-center justify-between">
               <div>
-                <span className="font-medium text-sm">IFCN Trail Alerts</span>
+                <span className="font-medium text-sm">IFCN Vandreruter</span>
                 <p className="text-xs text-slate-500 dark:text-slate-400">Tjek lukkede stier inden I tager afsted</p>
               </div>
               <span className="text-ocean dark:text-sky-400 text-sm">Åbn →</span>

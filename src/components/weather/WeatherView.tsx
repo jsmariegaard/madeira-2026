@@ -21,17 +21,18 @@ const LOCATIONS = [
 ];
 
 const WEBCAMS = [
-  { label: 'Funchal - Havnen', url: 'https://www.skylinewebcams.com/en/webcam/portugal/madeira/funchal/funchal-marina.html', source: 'skylinewebcams.com' },
-  { label: 'Funchal - Byen', url: 'https://www.skylinewebcams.com/en/webcam/portugal/madeira/funchal/funchal.html', source: 'skylinewebcams.com' },
-  { label: 'Câmara de Lobos', url: 'https://www.skylinewebcams.com/en/webcam/portugal/madeira/camara-de-lobos/camara-de-lobos.html', source: 'skylinewebcams.com' },
+  { label: 'Funchal - Havnen', url: 'https://www.windy.com/-Webcams/Portugal/Madeira/Funchal/webcams/1597157053', source: 'windy.com' },
+  { label: 'Funchal - Byen', url: 'https://www.windy.com/-Webcams/Portugal/Madeira/Funchal/webcams/1488809041', source: 'windy.com' },
+  { label: 'Câmara de Lobos', url: 'https://www.windy.com/-Webcams/Portugal/Madeira/webcams/1596634260', source: 'windy.com' },
   { label: 'Pico do Arieiro', url: 'https://www.windy.com/webcams/1597157053', source: 'windy.com' },
-  { label: 'Netmadeira (alle)', url: 'https://www.netmadeira.com/webcams-madeira', source: 'netmadeira.com' },
 ];
 
 const WEATHER_RESOURCES = [
   { label: 'Windy.com – Madeira', url: 'https://www.windy.com/32.75/-16.95?rain,32.75,-16.95,10', description: 'Interaktivt vejrkort med vind, regn, skyer og bølger' },
   { label: 'Regnradar – Madeira', url: 'https://www.windy.com/32.75/-16.95?radar,32.75,-16.95,8', description: 'Live regnradar – se præcis hvor det regner nu' },
-  { label: 'IPMA – Madeira', url: 'https://www.ipma.pt/en/otempo/prev.localidade/#Funchal&Madeira', description: 'Portugals meteorologiske institut – officiel prognose' },
+  { label: 'IPMA – Madeira', url: 'https://www.ipma.pt/en/otempo/prev.localidade.hora/#Madeira&Funchal', description: 'Portugals meteorologiske institut – officiel prognose' },
+  { label: 'Meteoblue – Madeira', url: 'https://www.meteoblue.com/en/weather/week/madeira_portugal_2266877', description: 'Detaljeret ugeprognose med nedbørssandsynlighed' },
+  { label: 'Yr.no – Funchal', url: 'https://www.yr.no/en/forecast/daily-table/2-2267827/Portugal/Madeira/Funchal%20Municipality/Funchal', description: 'Norsk vejrtjeneste – ofte meget præcis' },
   { label: 'Surf & Bølger', url: 'https://www.windy.com/32.75/-16.95?waves,32.75,-16.95,8', description: 'Bølgehøjde og vindforhold for kysten' },
 ];
 
